@@ -86,7 +86,7 @@ namespace RailwayTicketManagementSystem
             }
             catch(Exception exc)
             {
-
+                MessageBox.Show("An error occurred: " + exc.Message);
             }
            
         }
