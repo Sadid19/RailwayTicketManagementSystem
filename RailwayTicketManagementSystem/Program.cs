@@ -16,7 +16,7 @@ namespace RailwayTicketManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm());
+            Application.Run(new FormEmployeeList());
         }
     }
 }
