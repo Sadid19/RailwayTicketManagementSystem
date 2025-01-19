@@ -53,7 +53,7 @@ namespace RailwayTicketManagementSystem
             {
                 if(String.IsNullOrEmpty(this.txtUserId.Text) || String.IsNullOrEmpty(this.txtPassword.Text))
                 {
-                    MessageBox.Show("Please fillup all the empty fields");
+                    MessageBox.Show("Please fill-up all the empty fields!");
                     return;
                 }
 
@@ -82,6 +82,7 @@ namespace RailwayTicketManagementSystem
                 {
                     MessageBox.Show("Invalid User!");
                 }
+                Da.Sqlcon.Close();
 
             }
             catch(Exception exc)
