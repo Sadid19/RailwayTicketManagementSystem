@@ -8,41 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace RailwayTicketManagementSystem
 {
-    public partial class LoginForm : Form
+    public partial class FormLogin : Form
     {
         private DataAccess Da { get; set; }
-        public LoginForm()
+        public FormLogin()
         {
             InitializeComponent();
             this.Da = new DataAccess();
         }
-   
-
-        private void pbLogin_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -51,7 +29,7 @@ namespace RailwayTicketManagementSystem
         {
             try
             {
-                if(String.IsNullOrEmpty(this.txtUserId.Text) || String.IsNullOrEmpty(this.txtPassword.Text))
+                if (String.IsNullOrEmpty(this.txtUserId.Text) || String.IsNullOrEmpty(this.txtPassword.Text))
                 {
                     MessageBox.Show("Please fill-up all the empty fields!");
                     return;
@@ -67,12 +45,12 @@ namespace RailwayTicketManagementSystem
                     //this.Visible = false;
                     MessageBox.Show("Login Successful!");
 
-                    if(Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("admin"))
+                    if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("admin"))
                     {
                         //new AdminForm(name, this).Show();
                     }
 
-                    else if(Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("employee"))
+                    else if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("employee"))
                     {
                         //new EmployeForm(name, this).Show();
                     }
@@ -85,29 +63,12 @@ namespace RailwayTicketManagementSystem
                 Da.Sqlcon.Close();
 
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show("An error occurred: " + exc.Message);
             }
-           
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtUserId.Clear();
-            txtPassword.Clear();
-        }
 
-        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            if(cbShowPassword.Checked == true)
-            {
-                txtPassword.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtPassword.UseSystemPasswordChar = true;
-            }
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,19 +10,14 @@ using System.Windows.Forms;
 
 namespace RailwayTicketManagementSystem
 {
-    public partial class FormEmployeeList : Form
+    public partial class FormAdminDashboard : Form
     {
-        public FormEmployeeList()
+        public FormAdminDashboard()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
