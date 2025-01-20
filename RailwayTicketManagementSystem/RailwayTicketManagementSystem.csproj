@@ -53,6 +53,12 @@
     <Compile Include="FormAdminDashboard.Designer.cs">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEmployeeDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployeeDashboard.Designer.cs">
+      <DependentUpon>FormEmployeeDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmployeeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdminDashboard.resx">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployeeDashboard.resx">
+      <DependentUpon>FormEmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmployeeList.resx">
       <DependentUpon>FormEmployeeList.cs</DependentUpon>
