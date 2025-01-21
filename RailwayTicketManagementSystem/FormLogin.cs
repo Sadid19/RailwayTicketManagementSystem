@@ -38,16 +38,17 @@ namespace RailwayTicketManagementSystem
                 var sql = "select* from UserInfo where Id='" + this.txtUserId.Text + "' and Password='" + this.txtPassword.Text + "';";
                 Da.ExecuteQuery(sql);
 
-                //var name = Da.Ds.Tables[0].Rows[0][1].ToString();
+                var name = Da.Ds.Tables[0].Rows[0][1].ToString();
 
                 if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
-                    //this.Visible = false;
                     MessageBox.Show("Login Successful!");
+                    
+                    this.Visible = false;
 
                     if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("admin"))
                     {
-                        //new AdminForm(name, this).Show();
+                        new FormAdminDashboard(name, this).Show();
                     }
 
                     else if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("employee"))
@@ -67,8 +68,30 @@ namespace RailwayTicketManagementSystem
             {
                 MessageBox.Show("An error occurred: " + exc.Message);
             }
+        }
 
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(txtPassword.UseSystemPasswordChar == false)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            } 
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+                
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUserId.Clear();
+            txtPassword.Clear();
         }
     }
 }

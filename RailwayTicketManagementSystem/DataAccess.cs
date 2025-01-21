@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace RailwayTicketManagementSystem
 {
@@ -40,8 +41,7 @@ namespace RailwayTicketManagementSystem
 
         public DataAccess()
         {
-            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-4V7TK48;Initial Catalog=FirstDB;
-                                              Persist Security Info=True;User ID=sa;Password=Sadid@sql25");
+            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-4V7TK48;Initial Catalog=FirstDB;User ID=sa;Password=Sadid@sql25");
             Sqlcon.Open();
         }
 
@@ -62,11 +62,20 @@ namespace RailwayTicketManagementSystem
 
         public DataTable ExecuteQueryTable(string sql)
         {
-            this.Sqlcom = new SqlCommand(sql, this.Sqlcon);//this.QueryText(sql);
-            this.Sda = new SqlDataAdapter(this.Sqlcom);
-            this.Ds = new DataSet();
-            this.Sda.Fill(this.Ds);
-            return Ds.Tables[0];
+            try
+            {
+                this.Sqlcom = new SqlCommand(sql, this.Sqlcon);//this.QueryText(sql);
+                this.Sda = new SqlDataAdapter(this.Sqlcom);
+                this.Ds = new DataSet();
+                this.Sda.Fill(this.Ds);
+                return Ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+            MessageBox.Show(ex.Message);    
+            }
+            return null;
+
         }
 
         public int ExecuteDMLQuery(string sql)
