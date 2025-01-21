@@ -32,12 +32,15 @@
             this.lblSearchbyId = new System.Windows.Forms.Label();
             this.txtEmployeeListAutoSearch = new System.Windows.Forms.TextBox();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pnlTrainInfo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnShowDetails = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -47,10 +50,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.pnlEmployeeList = new System.Windows.Forms.Panel();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.pnlTrainInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +74,7 @@
             this.lblSearchbyId.AutoSize = true;
             this.lblSearchbyId.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchbyId.ForeColor = System.Drawing.Color.Green;
-            this.lblSearchbyId.Location = new System.Drawing.Point(688, 267);
+            this.lblSearchbyId.Location = new System.Drawing.Point(619, 267);
             this.lblSearchbyId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchbyId.Name = "lblSearchbyId";
             this.lblSearchbyId.Size = new System.Drawing.Size(86, 16);
@@ -84,10 +83,10 @@
             // 
             // txtEmployeeListAutoSearch
             // 
-            this.txtEmployeeListAutoSearch.Location = new System.Drawing.Point(782, 261);
+            this.txtEmployeeListAutoSearch.Location = new System.Drawing.Point(713, 261);
             this.txtEmployeeListAutoSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeListAutoSearch.Name = "txtEmployeeListAutoSearch";
-            this.txtEmployeeListAutoSearch.Size = new System.Drawing.Size(116, 22);
+            this.txtEmployeeListAutoSearch.Size = new System.Drawing.Size(97, 22);
             this.txtEmployeeListAutoSearch.TabIndex = 71;
             this.txtEmployeeListAutoSearch.TextChanged += new System.EventHandler(this.txtEmployeeListAutoSearch_TextChanged);
             // 
@@ -107,9 +106,45 @@
             this.dgvEmployeeList.RowHeadersWidth = 51;
             this.dgvEmployeeList.RowTemplate.Height = 24;
             this.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployeeList.Size = new System.Drawing.Size(889, 314);
+            this.dgvEmployeeList.Size = new System.Drawing.Size(799, 314);
             this.dgvEmployeeList.TabIndex = 70;
             this.dgvEmployeeList.DoubleClick += new System.EventHandler(this.dgvEmployeeList_DoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "User Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "User Name";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Role.DataPropertyName = "Role";
+            this.Role.HeaderText = "Role";
+            this.Role.MinimumWidth = 6;
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
             // 
             // txtRole
             // 
@@ -142,13 +177,12 @@
             this.pnlTrainInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrainInfo.Location = new System.Drawing.Point(0, 0);
             this.pnlTrainInfo.Name = "pnlTrainInfo";
-            this.pnlTrainInfo.Size = new System.Drawing.Size(913, 671);
+            this.pnlTrainInfo.Size = new System.Drawing.Size(823, 671);
             this.pnlTrainInfo.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnShowDetails);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblSearchbyId);
             this.panel1.Controls.Add(this.txtEmployeeListAutoSearch);
@@ -167,22 +201,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 671);
+            this.panel1.Size = new System.Drawing.Size(823, 671);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btnShowDetails
-            // 
-            this.btnShowDetails.BackColor = System.Drawing.Color.Green;
-            this.btnShowDetails.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowDetails.ForeColor = System.Drawing.Color.Transparent;
-            this.btnShowDetails.Location = new System.Drawing.Point(436, 87);
-            this.btnShowDetails.Name = "btnShowDetails";
-            this.btnShowDetails.Size = new System.Drawing.Size(117, 55);
-            this.btnShowDetails.TabIndex = 76;
-            this.btnShowDetails.Text = "Show Details";
-            this.btnShowDetails.UseVisualStyleBackColor = false;
-            this.btnShowDetails.Click += new System.EventHandler(this.btnShowDetails_Click);
             // 
             // txtId
             // 
@@ -237,7 +258,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Green;
             this.btnDelete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Location = new System.Drawing.Point(741, 89);
+            this.btnDelete.Location = new System.Drawing.Point(597, 92);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 53);
             this.btnDelete.TabIndex = 4;
@@ -250,7 +271,7 @@
             this.btnSave.BackColor = System.Drawing.Color.Green;
             this.btnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(592, 89);
+            this.btnSave.Location = new System.Drawing.Point(463, 92);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 53);
             this.btnSave.TabIndex = 2;
@@ -277,50 +298,14 @@
             this.pnlEmployeeList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEmployeeList.Location = new System.Drawing.Point(0, 0);
             this.pnlEmployeeList.Name = "pnlEmployeeList";
-            this.pnlEmployeeList.Size = new System.Drawing.Size(913, 671);
+            this.pnlEmployeeList.Size = new System.Drawing.Size(823, 671);
             this.pnlEmployeeList.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "User Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "User Name";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 6;
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Role.DataPropertyName = "Role";
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
             // 
             // FormEmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 671);
+            this.ClientSize = new System.Drawing.Size(823, 671);
             this.Controls.Add(this.pnlEmployeeList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -358,7 +343,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.Panel pnlEmployeeList;
-        private System.Windows.Forms.Button btnShowDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
