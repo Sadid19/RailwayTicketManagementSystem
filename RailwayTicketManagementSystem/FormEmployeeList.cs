@@ -148,16 +148,18 @@ namespace RailwayTicketManagementSystem
                 {
                     //update
                     var sql = @"update UserInfo
-                                set Username = '" + this.txtName.Text + @"',
-                                Password = " + this.txtPassword.Text + @",
-                                Role = " + this.txtRole.Text + @",
-                                where Id = '" + this.txtId.Text + "'; ";
+                                set Username = '" + txtName.Text + @"',
+                                Password = '" + txtPassword.Text + @"',
+                                Role = '" + txtRole.Text + @"'
+                                where Id = '" + txtId.Text + "';";
+;
                     int count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
                         MessageBox.Show("Data has been updated properly");
                     else
                         MessageBox.Show("Data hasn't been updated properly");
+                    
                 }
                 else
                 {
@@ -172,6 +174,7 @@ namespace RailwayTicketManagementSystem
                 }
 
                 this.PopulateGridView(); 
+                
             }
             catch (Exception exc)
             {
