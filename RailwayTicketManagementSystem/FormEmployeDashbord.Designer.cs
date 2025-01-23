@@ -28,167 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblWelcomeOutput = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.cmbChooseClass = new System.Windows.Forms.ComboBox();
-            this.cmbFrom = new System.Windows.Forms.ComboBox();
-            this.lblTo = new System.Windows.Forms.Label();
-            this.lblChooseClass = new System.Windows.Forms.Label();
-            this.lblFrom = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnTrainInfo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnUpdateDetails = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAddTrain = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.lblTotalOutput = new System.Windows.Forms.Label();
+            this.lblCart = new System.Windows.Forms.Label();
             this.lblTrainList = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gdvCart = new System.Windows.Forms.DataGridView();
+            this.InvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrainIdCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrainNameCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPassenegerPhoneNumber = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbQuantity = new System.Windows.Forms.ComboBox();
             this.lblQuantity = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.gdvTrainList = new System.Windows.Forms.DataGridView();
+            this.TrainID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrainName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Available = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnUpdateDetails);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAddTrain);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnConfirm);
+            this.panel1.Controls.Add(this.btnContinue);
+            this.panel1.Controls.Add(this.lblTotalOutput);
+            this.panel1.Controls.Add(this.lblCart);
             this.panel1.Controls.Add(this.lblTrainList);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.gdvCart);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.cmbQuantity);
+            this.panel1.Controls.Add(this.lblQuantity);
+            this.panel1.Controls.Add(this.gdvTrainList);
             this.panel1.Controls.Add(this.btnLogOut);
-            this.panel1.Controls.Add(this.btnTrainInfo);
-            this.panel1.Controls.Add(this.lblWelcomeOutput);
             this.panel1.Controls.Add(this.lblWelcome);
-            this.panel1.Location = new System.Drawing.Point(-5, -2);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1122, 580);
+            this.panel1.Size = new System.Drawing.Size(1138, 576);
             this.panel1.TabIndex = 0;
-            // 
-            // lblWelcomeOutput
-            // 
-            this.lblWelcomeOutput.AutoSize = true;
-            this.lblWelcomeOutput.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeOutput.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcomeOutput.Location = new System.Drawing.Point(96, 11);
-            this.lblWelcomeOutput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWelcomeOutput.Name = "lblWelcomeOutput";
-            this.lblWelcomeOutput.Size = new System.Drawing.Size(129, 16);
-            this.lblWelcomeOutput.TabIndex = 3;
-            this.lblWelcomeOutput.Text = "Welcome Output";
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcome.Location = new System.Drawing.Point(16, 11);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(79, 16);
-            this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome,";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Dhaka",
-            "Rajshahi",
-            "Chittagong",
-            "Khulna",
-            "Sirajgonj",
-            "Cumilla"});
-            this.comboBox3.Location = new System.Drawing.Point(230, 24);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(109, 21);
-            this.comboBox3.TabIndex = 13;
-            // 
-            // cmbChooseClass
-            // 
-            this.cmbChooseClass.FormattingEnabled = true;
-            this.cmbChooseClass.Items.AddRange(new object[] {
-            "AC_B",
-            "AC_S",
-            "S_Chair",
-            "Snigdha"});
-            this.cmbChooseClass.Location = new System.Drawing.Point(471, 24);
-            this.cmbChooseClass.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbChooseClass.Name = "cmbChooseClass";
-            this.cmbChooseClass.Size = new System.Drawing.Size(109, 21);
-            this.cmbChooseClass.TabIndex = 12;
-            // 
-            // cmbFrom
-            // 
-            this.cmbFrom.FormattingEnabled = true;
-            this.cmbFrom.Items.AddRange(new object[] {
-            "Dhaka",
-            "Rajshahi",
-            "Chittagong",
-            "Khulna",
-            "Sirajgonj",
-            "Cumilla"});
-            this.cmbFrom.Location = new System.Drawing.Point(60, 24);
-            this.cmbFrom.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbFrom.Name = "cmbFrom";
-            this.cmbFrom.Size = new System.Drawing.Size(109, 21);
-            this.cmbFrom.TabIndex = 11;
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.ForeColor = System.Drawing.Color.Green;
-            this.lblTo.Location = new System.Drawing.Point(199, 24);
-            this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(27, 16);
-            this.lblTo.TabIndex = 10;
-            this.lblTo.Text = "To";
-            // 
-            // lblChooseClass
-            // 
-            this.lblChooseClass.AutoSize = true;
-            this.lblChooseClass.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseClass.ForeColor = System.Drawing.Color.Green;
-            this.lblChooseClass.Location = new System.Drawing.Point(362, 24);
-            this.lblChooseClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblChooseClass.Name = "lblChooseClass";
-            this.lblChooseClass.Size = new System.Drawing.Size(105, 16);
-            this.lblChooseClass.TabIndex = 9;
-            this.lblChooseClass.Text = "Choose Class";
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.ForeColor = System.Drawing.Color.Green;
-            this.lblFrom.Location = new System.Drawing.Point(11, 24);
-            this.lblFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(45, 16);
-            this.lblFrom.TabIndex = 8;
-            this.lblFrom.Text = "From";
             // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Green;
             this.btnLogOut.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(1017, 13);
+            this.btnLogOut.Location = new System.Drawing.Point(1043, 11);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(86, 44);
@@ -196,198 +100,349 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             // 
-            // btnTrainInfo
+            // lblWelcome
             // 
-            this.btnTrainInfo.BackColor = System.Drawing.Color.Green;
-            this.btnTrainInfo.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrainInfo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTrainInfo.Location = new System.Drawing.Point(911, 13);
-            this.btnTrainInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrainInfo.Name = "btnTrainInfo";
-            this.btnTrainInfo.Size = new System.Drawing.Size(86, 44);
-            this.btnTrainInfo.TabIndex = 14;
-            this.btnTrainInfo.Text = "Train Information";
-            this.btnTrainInfo.UseVisualStyleBackColor = false;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Green;
+            this.lblWelcome.Location = new System.Drawing.Point(12, 11);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(79, 16);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Welcome,";
             // 
-            // label1
+            // btnUpdateDetails
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(584, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 16);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Date of Journey";
+            this.btnUpdateDetails.BackColor = System.Drawing.Color.Green;
+            this.btnUpdateDetails.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateDetails.ForeColor = System.Drawing.Color.Transparent;
+            this.btnUpdateDetails.Location = new System.Drawing.Point(315, 547);
+            this.btnUpdateDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateDetails.Name = "btnUpdateDetails";
+            this.btnUpdateDetails.Size = new System.Drawing.Size(94, 32);
+            this.btnUpdateDetails.TabIndex = 40;
+            this.btnUpdateDetails.Text = "Update Details";
+            this.btnUpdateDetails.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // btnDelete
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(724, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.btnDelete.BackColor = System.Drawing.Color.Green;
+            this.btnDelete.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Location = new System.Drawing.Point(445, 547);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(82, 32);
+            this.btnDelete.TabIndex = 39;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // btnAddTrain
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.lblFrom);
-            this.panel2.Controls.Add(this.lblChooseClass);
-            this.panel2.Controls.Add(this.lblTo);
-            this.panel2.Controls.Add(this.cmbFrom);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.cmbChooseClass);
-            this.panel2.Location = new System.Drawing.Point(19, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(853, 100);
-            this.panel2.TabIndex = 19;
+            this.btnAddTrain.BackColor = System.Drawing.Color.Green;
+            this.btnAddTrain.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTrain.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddTrain.Location = new System.Drawing.Point(198, 547);
+            this.btnAddTrain.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddTrain.Name = "btnAddTrain";
+            this.btnAddTrain.Size = new System.Drawing.Size(82, 32);
+            this.btnAddTrain.TabIndex = 38;
+            this.btnAddTrain.Text = "Add Train";
+            this.btnAddTrain.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // btnCancel
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(3, 259);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1116, 225);
-            this.panel3.TabIndex = 20;
+            this.btnCancel.BackColor = System.Drawing.Color.Green;
+            this.btnCancel.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancel.Location = new System.Drawing.Point(1039, 507);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(71, 32);
+            this.btnCancel.TabIndex = 37;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Green;
+            this.btnConfirm.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.Location = new System.Drawing.Point(963, 507);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(71, 32);
+            this.btnConfirm.TabIndex = 36;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.Green;
+            this.btnContinue.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.Color.Transparent;
+            this.btnContinue.Location = new System.Drawing.Point(490, 450);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(82, 32);
+            this.btnContinue.TabIndex = 35;
+            this.btnContinue.Text = "Continue>>";
+            this.btnContinue.UseVisualStyleBackColor = false;
+            // 
+            // lblTotalOutput
+            // 
+            this.lblTotalOutput.AutoSize = true;
+            this.lblTotalOutput.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOutput.ForeColor = System.Drawing.Color.Green;
+            this.lblTotalOutput.Location = new System.Drawing.Point(63, 507);
+            this.lblTotalOutput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalOutput.Name = "lblTotalOutput";
+            this.lblTotalOutput.Size = new System.Drawing.Size(105, 16);
+            this.lblTotalOutput.TabIndex = 34;
+            this.lblTotalOutput.Text = "Total Outptut";
+            // 
+            // lblCart
+            // 
+            this.lblCart.AutoSize = true;
+            this.lblCart.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCart.ForeColor = System.Drawing.Color.Green;
+            this.lblCart.Location = new System.Drawing.Point(829, 48);
+            this.lblCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCart.Name = "lblCart";
+            this.lblCart.Size = new System.Drawing.Size(38, 16);
+            this.lblCart.TabIndex = 33;
+            this.lblCart.Text = "Cart";
             // 
             // lblTrainList
             // 
             this.lblTrainList.AutoSize = true;
             this.lblTrainList.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainList.ForeColor = System.Drawing.Color.Green;
-            this.lblTrainList.Location = new System.Drawing.Point(487, 222);
+            this.lblTrainList.Location = new System.Drawing.Point(240, 48);
             this.lblTrainList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainList.Name = "lblTrainList";
             this.lblTrainList.Size = new System.Drawing.Size(79, 16);
-            this.lblTrainList.TabIndex = 21;
+            this.lblTrainList.TabIndex = 32;
             this.lblTrainList.Text = "Train List";
             // 
-            // dataGridView1
+            // gdvCart
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1113, 222);
-            this.dataGridView1.TabIndex = 0;
+            this.gdvCart.AllowUserToAddRows = false;
+            this.gdvCart.AllowUserToDeleteRows = false;
+            this.gdvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.InvoiceNumber,
+            this.TrainIdCart,
+            this.TrainNameCart,
+            this.FromStationCart,
+            this.ToStationCart,
+            this.PriceCart,
+            this.UserId});
+            this.gdvCart.Location = new System.Drawing.Point(591, 76);
+            this.gdvCart.Margin = new System.Windows.Forms.Padding(2);
+            this.gdvCart.Name = "gdvCart";
+            this.gdvCart.ReadOnly = true;
+            this.gdvCart.RowHeadersWidth = 51;
+            this.gdvCart.RowTemplate.Height = 24;
+            this.gdvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdvCart.Size = new System.Drawing.Size(548, 366);
+            this.gdvCart.TabIndex = 31;
+            // 
+            // InvoiceNumber
+            // 
+            this.InvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.InvoiceNumber.DataPropertyName = "InvoiceNumber";
+            this.InvoiceNumber.HeaderText = "Invoice No";
+            this.InvoiceNumber.MinimumWidth = 6;
+            this.InvoiceNumber.Name = "InvoiceNumber";
+            this.InvoiceNumber.ReadOnly = true;
+            // 
+            // TrainIdCart
+            // 
+            this.TrainIdCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainIdCart.DataPropertyName = "TrainIdCart";
+            this.TrainIdCart.HeaderText = "Train ID";
+            this.TrainIdCart.MinimumWidth = 6;
+            this.TrainIdCart.Name = "TrainIdCart";
+            this.TrainIdCart.ReadOnly = true;
+            // 
+            // TrainNameCart
+            // 
+            this.TrainNameCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainNameCart.DataPropertyName = "TrainNameCart";
+            this.TrainNameCart.HeaderText = "Train Name";
+            this.TrainNameCart.MinimumWidth = 6;
+            this.TrainNameCart.Name = "TrainNameCart";
+            this.TrainNameCart.ReadOnly = true;
+            // 
+            // FromStationCart
+            // 
+            this.FromStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FromStationCart.DataPropertyName = "FromStationCart";
+            this.FromStationCart.HeaderText = "From Station";
+            this.FromStationCart.MinimumWidth = 6;
+            this.FromStationCart.Name = "FromStationCart";
+            this.FromStationCart.ReadOnly = true;
+            // 
+            // ToStationCart
+            // 
+            this.ToStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ToStationCart.DataPropertyName = "ToStationCart";
+            this.ToStationCart.HeaderText = "To Station";
+            this.ToStationCart.MinimumWidth = 6;
+            this.ToStationCart.Name = "ToStationCart";
+            this.ToStationCart.ReadOnly = true;
+            // 
+            // PriceCart
+            // 
+            this.PriceCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PriceCart.DataPropertyName = "PriceCart";
+            this.PriceCart.HeaderText = "Price";
+            this.PriceCart.MinimumWidth = 6;
+            this.PriceCart.Name = "PriceCart";
+            this.PriceCart.ReadOnly = true;
+            // 
+            // UserId
+            // 
+            this.UserId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserId.DataPropertyName = "UserId";
+            this.UserId.HeaderText = "User ID";
+            this.UserId.MinimumWidth = 6;
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
-            this.lblTotal.Location = new System.Drawing.Point(2, 67);
+            this.lblTotal.Location = new System.Drawing.Point(4, 507);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(45, 16);
-            this.lblTotal.TabIndex = 26;
+            this.lblTotal.TabIndex = 30;
             this.lblTotal.Text = "Total";
             // 
-            // textBox1
+            // cmbQuantity
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 17);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 25;
-            // 
-            // lblPassenegerPhoneNumber
-            // 
-            this.lblPassenegerPhoneNumber.AutoSize = true;
-            this.lblPassenegerPhoneNumber.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassenegerPhoneNumber.ForeColor = System.Drawing.Color.Green;
-            this.lblPassenegerPhoneNumber.Location = new System.Drawing.Point(2, 18);
-            this.lblPassenegerPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPassenegerPhoneNumber.Name = "lblPassenegerPhoneNumber";
-            this.lblPassenegerPhoneNumber.Size = new System.Drawing.Size(161, 16);
-            this.lblPassenegerPhoneNumber.TabIndex = 24;
-            this.lblPassenegerPhoneNumber.Text = "Passenger Phone No.";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dhaka",
-            "Rajshahi",
-            "Chittagong",
-            "Khulna",
-            "Sirajgonj",
-            "Cumilla"});
-            this.comboBox1.Location = new System.Drawing.Point(413, 16);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 21);
-            this.comboBox1.TabIndex = 23;
+            this.cmbQuantity.FormattingEnabled = true;
+            this.cmbQuantity.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cmbQuantity.Location = new System.Drawing.Point(73, 464);
+            this.cmbQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbQuantity.Name = "cmbQuantity";
+            this.cmbQuantity.Size = new System.Drawing.Size(43, 21);
+            this.cmbQuantity.TabIndex = 29;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Green;
-            this.lblQuantity.Location = new System.Drawing.Point(342, 16);
+            this.lblQuantity.Location = new System.Drawing.Point(2, 464);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(70, 16);
-            this.lblQuantity.TabIndex = 22;
+            this.lblQuantity.TabIndex = 28;
             this.lblQuantity.Text = "Quantity";
             // 
-            // button1
+            // gdvTrainList
             // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(805, 520);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 44);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.gdvTrainList.AllowUserToAddRows = false;
+            this.gdvTrainList.AllowUserToDeleteRows = false;
+            this.gdvTrainList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvTrainList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TrainID,
+            this.TrainName,
+            this.FromStation,
+            this.ToStation,
+            this.Available,
+            this.Price});
+            this.gdvTrainList.Location = new System.Drawing.Point(2, 76);
+            this.gdvTrainList.Margin = new System.Windows.Forms.Padding(2);
+            this.gdvTrainList.Name = "gdvTrainList";
+            this.gdvTrainList.ReadOnly = true;
+            this.gdvTrainList.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gdvTrainList.RowTemplate.Height = 24;
+            this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdvTrainList.Size = new System.Drawing.Size(578, 366);
+            this.gdvTrainList.TabIndex = 27;
             // 
-            // button2
+            // TrainID
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(964, 520);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 44);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Confirm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.TrainID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainID.DataPropertyName = "TrainID";
+            this.TrainID.HeaderText = "Train ID";
+            this.TrainID.MinimumWidth = 6;
+            this.TrainID.Name = "TrainID";
+            this.TrainID.ReadOnly = true;
             // 
-            // panel4
+            // TrainName
             // 
-            this.panel4.Controls.Add(this.lblPassenegerPhoneNumber);
-            this.panel4.Controls.Add(this.lblQuantity);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.lblTotal);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Location = new System.Drawing.Point(4, 490);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(584, 87);
-            this.panel4.TabIndex = 29;
+            this.TrainName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainName.DataPropertyName = "TrainName";
+            this.TrainName.HeaderText = "Train Name";
+            this.TrainName.MinimumWidth = 6;
+            this.TrainName.Name = "TrainName";
+            this.TrainName.ReadOnly = true;
             // 
-            // FormEmployeeDashboard
+            // FromStation
+            // 
+            this.FromStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FromStation.DataPropertyName = "FromStation";
+            this.FromStation.HeaderText = "From Station";
+            this.FromStation.MinimumWidth = 6;
+            this.FromStation.Name = "FromStation";
+            this.FromStation.ReadOnly = true;
+            // 
+            // ToStation
+            // 
+            this.ToStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ToStation.DataPropertyName = "ToStation";
+            this.ToStation.HeaderText = "To Station";
+            this.ToStation.MinimumWidth = 6;
+            this.ToStation.Name = "ToStation";
+            this.ToStation.ReadOnly = true;
+            // 
+            // Available
+            // 
+            this.Available.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Available.DataPropertyName = "Available";
+            this.Available.HeaderText = "Available Train";
+            this.Available.MinimumWidth = 6;
+            this.Available.Name = "Available";
+            this.Available.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Ticket Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // FormEmployeDashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 573);
+            this.ClientSize = new System.Drawing.Size(1139, 573);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormEmployeeDashboard";
+            this.Name = "FormEmployeDashbord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEmployeeDashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,29 +450,34 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblWelcomeOutput;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox cmbChooseClass;
-        private System.Windows.Forms.ComboBox cmbFrom;
-        private System.Windows.Forms.Label lblTo;
-        private System.Windows.Forms.Label lblChooseClass;
-        private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnTrainInfo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnUpdateDetails;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAddTrain;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label lblTotalOutput;
+        private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblTrainList;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gdvCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrainIdCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrainNameCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FromStationCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToStationCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblPassenegerPhoneNumber;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbQuantity;
         private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView gdvTrainList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrainID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrainName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FromStation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToStation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Available;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

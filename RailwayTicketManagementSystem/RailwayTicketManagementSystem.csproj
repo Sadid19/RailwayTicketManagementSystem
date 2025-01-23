@@ -82,6 +82,9 @@
     <EmbeddedResource Include="FormAdminDashboard.resx">
       <DependentUpon>FormAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEmployeDashbord.resx">
+      <DependentUpon>FormEmployeDashbord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEmployeeList.resx">
       <DependentUpon>FormEmployeeList.cs</DependentUpon>
     </EmbeddedResource>

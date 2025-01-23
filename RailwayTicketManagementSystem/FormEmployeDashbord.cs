@@ -16,5 +16,15 @@ namespace RailwayTicketManagementSystem
         {
             InitializeComponent();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblWelcomeOutput_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
