@@ -16,7 +16,7 @@ namespace RailwayTicketManagementSystem
     {
         private DataAccess Da { get; set; }
         private FormAdminDashboard FormAdmindashboard {  get; set; }
-        private FormEmployeDashbord FormEmployebord {  get; set; }
+        private FormEmployeDashbord FormEmployeedashbord {  get; set; }
         public FormTrainInfo()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace RailwayTicketManagementSystem
         }
         public FormTrainInfo(FormEmployeDashbord employeDashbord) : this()
         {
-            this.FormEmployebord =   employeDashbord;
+            this.FormEmployeedashbord =   employeDashbord;
             this.AutoIdGenerate();
         }
 
@@ -53,7 +53,7 @@ namespace RailwayTicketManagementSystem
         }
         public FormTrainInfo(FormEmployeDashbord EDashboard, string trainId, string trainName, string fromStation, string toStation, string available, string price) : this()
         {
-            this.FormEmployebord = EDashboard;
+            this.FormEmployeedashbord = EDashboard;
             this.txtTrainId.Text = trainId;
             this.txtTrainName.Text = trainName;
             this.txtFrom.Text = fromStation;

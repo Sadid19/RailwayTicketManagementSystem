@@ -176,7 +176,7 @@ namespace RailwayTicketManagementSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("This Information Already Exist in the Cart!  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This Information Already Exist in the Cart!  "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.gdvTrainList.ClearSelection();
 
