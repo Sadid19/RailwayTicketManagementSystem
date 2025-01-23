@@ -89,7 +89,6 @@ namespace RailwayTicketManagementSystem
         {
             MessageBox.Show("Logged out from the system");
             this.Hide();
-            //this.FormLogin.Show();
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
         }
