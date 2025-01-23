@@ -137,27 +137,41 @@ namespace RailwayTicketManagementSystem
                     return;
                 }
 
-
-
-                
-                var selectedRow = gdvTrainList.CurrentRow;
-
+                var selectedRow = this.gdvTrainList.CurrentRow;
                 var trainId = selectedRow.Cells["TrainId"].Value.ToString(); 
                 var trainName = selectedRow.Cells["TrainName"].Value.ToString(); 
                 var fromStation = selectedRow.Cells["FromStation"].Value.ToString();
                 var toStation = selectedRow.Cells["ToStation"].Value.ToString();
-                var price = selectedRow.Cells["Price"].Value.ToString();       
-                
+                var price = Convert.ToDecimal(selectedRow.Cells["Price"].Value);
+                var availability = selectedRow.Cells["Available"].Value.ToString();
+
+                if(availability.ToLower() != "yes")
+                {
+                    MessageBox.Show("The train is not available!", "Unavailable Train", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cmbQuantity.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a quantity!", "Missing Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int quantity = Convert.ToInt32(cmbQuantity.SelectedItem.ToString());
+                decimal total = price * quantity;
+
+                this.lblTotalOutput.Text = total.ToString();
 
                 this.gdvTrainList.ClearSelection();
 
-                var sql = $"INSERT INTO CartView (TrainIdCart, TrainNameCart, FromStationCart, ToStationCart, PriceCart, UserId) " +
-                  $"VALUES ('{trainId}', '{trainName}', '{fromStation}', '{toStation}', {price}, '{this.UserID}');";
+                var sql = $"INSERT INTO CartView (TrainIdCart, TrainNameCart, FromStationCart, ToStationCart, PriceCart, UserId) VALUES ('{trainId}', '{trainName}', '{fromStation}', '{toStation}', {total}, '{this.UserID}');";
                 var rowsAffected = Da.ExecuteDMLQuery(sql);
 
                 if (rowsAffected == 1)
                 {
                     MessageBox.Show("Informatoin added to the cart successfully!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cmbQuantity.SelectedIndex = -1;
+                    this.lblTotalOutput.Text = "";
                     this.CartGridView(); // Refresh cart view
                     this.gdvCart.ClearSelection();
                     
@@ -176,7 +190,6 @@ namespace RailwayTicketManagementSystem
 
         }
 
-
         private void gdvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -184,6 +197,50 @@ namespace RailwayTicketManagementSystem
 
         private void FormAdminDashboard_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.gdvCart.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a row to cancel", "Select a row first!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = this.gdvCart.CurrentRow;
+                var invoiceNumber = selectedRow.Cells["InvoiceNumber"].Value.ToString();
+                
+                var confirmCancel = MessageBox.Show("Are you sure want to cancel the ticket?'", "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmCancel == DialogResult.Yes)
+                {
+                    var deleteSql = $"DELETE FROM CartView WHERE InvoiceNumber = {invoiceNumber};";
+                    var rowsAffected = Da.ExecuteDMLQuery(deleteSql);
+                    if (rowsAffected == 1)
+                    {
+                        MessageBox.Show("The ticket is cancel from the cart successfully!", "Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.CartGridView();
+                        this.gdvCart.ClearSelection();
+                    }
+
+                    else
+                    {
+                        return;
+                        //MessageBox.Show("Failed to cancel the ticket. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to cancel the ticket. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

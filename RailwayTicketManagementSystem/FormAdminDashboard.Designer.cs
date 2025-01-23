@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAdminDashboard = new System.Windows.Forms.Panel();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -140,6 +140,7 @@
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnConfirm
             // 
@@ -273,8 +274,8 @@
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
