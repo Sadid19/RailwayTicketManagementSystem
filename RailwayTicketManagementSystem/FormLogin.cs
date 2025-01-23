@@ -20,6 +20,11 @@ namespace RailwayTicketManagementSystem
             this.Da = new DataAccess();
         }
 
+        public string UserID
+        {
+            get { return this.txtUserId.Text; }
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -35,32 +40,32 @@ namespace RailwayTicketManagementSystem
                     return;
                 }
 
-                var sql = "select* from UserInfo where Id='" + this.txtUserId.Text + "' and Password='" + this.txtPassword.Text + "';";
-                Da.ExecuteQuery(sql);
-
-                var name = Da.Ds.Tables[0].Rows[0][1].ToString();
-
+                var sqlAdmin = $"SELECT * FROM AdminTable WHERE UserId = '{this.txtUserId.Text}' AND Password = '{this.txtPassword.Text}';";
+                var sqlEmployee = $"SELECT * FROM EmployeeTable WHERE UserId = '{this.txtUserId.Text}' AND Password = '{this.txtPassword.Text}';";
+                Da.ExecuteQuery(sqlAdmin);
                 if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
-                    MessageBox.Show("Login Successful!");
-                    
+                    string name = Da.Ds.Tables[0].Rows[0]["UserName"].ToString();
+                    MessageBox.Show("Login Successful as Admin!");
                     this.Visible = false;
-
-                    if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("admin"))
-                    {
-                        new FormAdminDashboard(name, this).Show();
-                    }
-
-                    else if (Da.Ds.Tables[0].Rows[0]["Role"].ToString().Equals("employee"))
-                    {
-                        //new EmployeForm(name, this).Show();
-                    }
-
+                    
+                    new FormAdminDashboard(name, this.UserID).Show();
+                    return;
                 }
-                else
+
+                Da.ExecuteQuery(sqlEmployee);
+
+                Da.ExecuteQuery(sqlEmployee);
+                if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
-                    MessageBox.Show("Invalid User!");
+                    var name = Da.Ds.Tables[0].Rows[0]["UserName"].ToString();
+                    MessageBox.Show("Login Successful as Employee!");
+                    this.Visible = false;
+                    //new FormEmployeeDashboard(name, this, UserId).Show();
+                    return;
                 }
+
+                MessageBox.Show("Invalid User!");
                 Da.Sqlcon.Close();
 
             }
@@ -92,6 +97,12 @@ namespace RailwayTicketManagementSystem
         {
             txtUserId.Clear();
             txtPassword.Clear();
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }
