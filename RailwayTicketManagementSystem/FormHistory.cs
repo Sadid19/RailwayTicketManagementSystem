@@ -12,16 +12,25 @@ using System.Windows.Forms;
 namespace RailwayTicketManagementSystem
 {
     public partial class FormHistory : Form
-    {
+    {private string UserID{ get; set; }
         private DataAccess Da { get; set; }
         public FormHistory(DataAccess da)
         {
             InitializeComponent();
+            this.Da = da; string sql = "select* from HistoryTable;";
+            this.HistoryData( sql );
+        }
+       
+        public FormHistory(DataAccess da,string id)
+        {
+            InitializeComponent();
+            this.UserID = id;
             this.Da = da;
-            this.HistoryData();
+            string sql = "select* from HistoryTable where UserIdHistory = '" + this.UserID + "';";
+            this.HistoryData(sql);
         }
 
-        private void HistoryData(string sql = "select* from HistoryTable;")
+        private void HistoryData(string sql)
         {
             try
             {

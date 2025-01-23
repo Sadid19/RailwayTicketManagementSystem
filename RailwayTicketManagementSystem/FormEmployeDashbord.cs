@@ -345,5 +345,17 @@ namespace RailwayTicketManagementSystem
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
+            FormHistory formHistory = new FormHistory(this.Da,this.UserID);
+            formHistory.Show();
+        }
+
+        private void FormEmployeDashbord_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
