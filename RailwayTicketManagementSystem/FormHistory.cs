@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace RailwayTicketManagementSystem
 {
-    public partial class FormEmployeDashbord : Form
+    public partial class FormHistory : Form
     {
-        public FormEmployeDashbord()
+        public FormHistory()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblWelcomeOutput_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
