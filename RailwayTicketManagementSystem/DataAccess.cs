@@ -41,7 +41,9 @@ namespace RailwayTicketManagementSystem
 
         public DataAccess()
         {
-            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-4V7TK48;Initial Catalog=RailwayTicketManagement;User ID=sa;Password=Sadid@sql25");
+           // this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-4V7TK48;Initial Catalog=RailwayTicketManagement;User ID=sa;Password=Sadid@sql25");
+            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-4M0G2S3;Initial Catalog=something;Persist Security Info=True;User ID=sa;Password=touhid;Encrypt=False");
+
             Sqlcon.Open();
         }
 

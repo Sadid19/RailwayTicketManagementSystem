@@ -53,7 +53,7 @@ namespace RailwayTicketManagementSystem
                     return;
                 }
 
-                Da.ExecuteQuery(sqlEmployee);
+                //Da.ExecuteQuery(sqlEmployee);
 
                 Da.ExecuteQuery(sqlEmployee);
                 if (Da.Ds.Tables[0].Rows.Count == 1)
@@ -61,7 +61,7 @@ namespace RailwayTicketManagementSystem
                     var name = Da.Ds.Tables[0].Rows[0]["UserName"].ToString();
                     MessageBox.Show("Login Successful as Employee!");
                     this.Visible = false;
-                    //new FormEmployeeDashboard(name, this, UserId).Show();
+                    new FormEmployeDashbord(name, this.UserID).Show();
                     return;
                 }
 

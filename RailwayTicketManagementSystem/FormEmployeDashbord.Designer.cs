@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddTrain = new System.Windows.Forms.Button();
@@ -59,6 +58,8 @@
             this.ToStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).BeginInit();
@@ -66,6 +67,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnHistory);
             this.panel1.Controls.Add(this.btnUpdateDetails);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAddTrain);
@@ -84,33 +86,21 @@
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 576);
+            this.panel1.Size = new System.Drawing.Size(1150, 594);
             this.panel1.TabIndex = 0;
             // 
-            // btnLogOut
+            // btnHistory
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.Green;
-            this.btnLogOut.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(1043, 11);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(86, 44);
-            this.btnLogOut.TabIndex = 16;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcome.Location = new System.Drawing.Point(12, 11);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(79, 16);
-            this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome,";
+            this.btnHistory.BackColor = System.Drawing.Color.Green;
+            this.btnHistory.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Location = new System.Drawing.Point(938, 16);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(82, 39);
+            this.btnHistory.TabIndex = 41;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = false;
             // 
             // btnUpdateDetails
             // 
@@ -124,6 +114,7 @@
             this.btnUpdateDetails.TabIndex = 40;
             this.btnUpdateDetails.Text = "Update Details";
             this.btnUpdateDetails.UseVisualStyleBackColor = false;
+            this.btnUpdateDetails.Click += new System.EventHandler(this.btnUpdateDetails_Click);
             // 
             // btnDelete
             // 
@@ -137,6 +128,7 @@
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddTrain
             // 
@@ -150,6 +142,7 @@
             this.btnAddTrain.TabIndex = 38;
             this.btnAddTrain.Text = "Add Train";
             this.btnAddTrain.UseVisualStyleBackColor = false;
+            this.btnAddTrain.Click += new System.EventHandler(this.btnAddTrain_Click);
             // 
             // btnCancel
             // 
@@ -163,6 +156,7 @@
             this.btnCancel.TabIndex = 37;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnConfirm
             // 
@@ -176,6 +170,7 @@
             this.btnConfirm.TabIndex = 36;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnContinue
             // 
@@ -189,6 +184,7 @@
             this.btnContinue.TabIndex = 35;
             this.btnContinue.Text = "Continue>>";
             this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // lblTotalOutput
             // 
@@ -367,8 +363,8 @@
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvTrainList.Size = new System.Drawing.Size(578, 366);
@@ -428,11 +424,37 @@
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Green;
+            this.btnLogOut.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Location = new System.Drawing.Point(1043, 11);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(86, 44);
+            this.btnLogOut.TabIndex = 16;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Green;
+            this.lblWelcome.Location = new System.Drawing.Point(12, 11);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(79, 16);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Welcome,";
+            // 
             // FormEmployeDashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 573);
+            this.ClientSize = new System.Drawing.Size(1147, 595);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -479,5 +501,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ToStation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Available;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Button btnHistory;
     }
 }

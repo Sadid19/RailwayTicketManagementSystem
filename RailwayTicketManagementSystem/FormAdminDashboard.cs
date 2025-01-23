@@ -99,12 +99,12 @@ namespace RailwayTicketManagementSystem
             Application.Exit();
         }
 
-        private void btnTrainInfo_Click(object sender, EventArgs e)
-        {
-             new FormTrainInfo(this).Show();           
-             this.Visible = false;
+        //private void btnTrainInfo_Click(object sender, EventArgs e)
+        //{
+        //     new FormTrainInfo(this).Show();           
+        //     this.Visible = false;
 
-        }
+        //}
 
         private void btnEmployeeList_Click(object sender, EventArgs e)
         {
@@ -349,6 +349,7 @@ namespace RailwayTicketManagementSystem
                 FormTrainInfo formTrainInfo = new FormTrainInfo(this, trainId, trainName, fromStation, toStation, available, price);
                 formTrainInfo.ShowDialog(); // Wait for form to close
                 this.TrainListGridView(); // Refresh Train List Grid
+                //this.RefreshTrainListGrid();
             }
             catch (Exception ex)
             {
