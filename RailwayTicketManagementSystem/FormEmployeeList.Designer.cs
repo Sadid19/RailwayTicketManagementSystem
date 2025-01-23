@@ -32,15 +32,13 @@
             this.lblSearchbyId = new System.Windows.Forms.Label();
             this.txtEmployeeListAutoSearch = new System.Windows.Forms.TextBox();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pnlTrainInfo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.lblSalary = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -50,8 +48,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.pnlEmployeeList = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblSalary = new System.Windows.Forms.Label();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAddMsg = new System.Windows.Forms.Label();
+            this.lblupdateMsg = new System.Windows.Forms.Label();
+            this.lblDeleteMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.pnlTrainInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -98,10 +102,11 @@
             this.dgvEmployeeList.AllowUserToDeleteRows = false;
             this.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.UserId,
             this.Username,
             this.Password,
-            this.Role});
+            this.Role,
+            this.Salary});
             this.dgvEmployeeList.Location = new System.Drawing.Point(12, 290);
             this.dgvEmployeeList.Name = "dgvEmployeeList";
             this.dgvEmployeeList.ReadOnly = true;
@@ -110,70 +115,31 @@
             this.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployeeList.Size = new System.Drawing.Size(799, 314);
             this.dgvEmployeeList.TabIndex = 70;
+            this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             this.dgvEmployeeList.DoubleClick += new System.EventHandler(this.dgvEmployeeList_DoubleClick);
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "User Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.ToolTipText = "User ID";
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "User Name";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.ToolTipText = "User Name";
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 6;
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.ToolTipText = "Password";
-            // 
-            // Role
-            // 
-            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Role.DataPropertyName = "Role";
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            this.Role.ToolTipText = "Role";
             // 
             // txtRole
             // 
-            this.txtRole.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRole.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRole.Location = new System.Drawing.Point(137, 182);
             this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(164, 28);
+            this.txtRole.Size = new System.Drawing.Size(164, 27);
             this.txtRole.TabIndex = 21;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(137, 127);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(164, 28);
+            this.txtPassword.Size = new System.Drawing.Size(164, 27);
             this.txtPassword.TabIndex = 20;
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(137, 72);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(164, 31);
+            this.txtName.Size = new System.Drawing.Size(164, 27);
             this.txtName.TabIndex = 19;
             // 
             // pnlTrainInfo
@@ -189,7 +155,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lblDeleteMsg);
+            this.panel1.Controls.Add(this.lblupdateMsg);
+            this.panel1.Controls.Add(this.lblAddMsg);
+            this.panel1.Controls.Add(this.txtSalary);
             this.panel1.Controls.Add(this.lblSalary);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblSearchbyId);
@@ -213,13 +182,32 @@
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtSalary
+            // 
+            this.txtSalary.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(137, 236);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(164, 27);
+            this.txtSalary.TabIndex = 77;
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.Location = new System.Drawing.Point(23, 236);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(62, 21);
+            this.lblSalary.TabIndex = 76;
+            this.lblSalary.Text = "Salary";
+            // 
             // txtId
             // 
-            this.txtId.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(137, 22);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(164, 28);
+            this.txtId.Size = new System.Drawing.Size(164, 27);
             this.txtId.TabIndex = 18;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // lblRole
             // 
@@ -266,9 +254,9 @@
             this.btnDelete.BackColor = System.Drawing.Color.Green;
             this.btnDelete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Location = new System.Drawing.Point(637, 128);
+            this.btnDelete.Location = new System.Drawing.Point(643, 169);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(108, 53);
+            this.btnDelete.Size = new System.Drawing.Size(89, 50);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -279,9 +267,9 @@
             this.btnSave.BackColor = System.Drawing.Color.Green;
             this.btnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(511, 128);
+            this.btnSave.Location = new System.Drawing.Point(517, 169);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 53);
+            this.btnSave.Size = new System.Drawing.Size(89, 50);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -309,23 +297,93 @@
             this.pnlEmployeeList.Size = new System.Drawing.Size(823, 671);
             this.pnlEmployeeList.TabIndex = 1;
             // 
-            // textBox1
+            // UserId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(137, 236);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 28);
-            this.textBox1.TabIndex = 77;
+            this.UserId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserId.DataPropertyName = "UserId";
+            this.UserId.HeaderText = "User Id";
+            this.UserId.MinimumWidth = 6;
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
+            this.UserId.ToolTipText = "User ID";
             // 
-            // lblSalary
+            // Username
             // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(23, 236);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(62, 21);
-            this.lblSalary.TabIndex = 76;
-            this.lblSalary.Text = "Salary";
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Username.DataPropertyName = "UserName";
+            this.Username.HeaderText = "User Name";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.ToolTipText = "User Name";
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.ToolTipText = "Password";
+            // 
+            // Role
+            // 
+            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Role.DataPropertyName = "Role";
+            this.Role.HeaderText = "Role";
+            this.Role.MinimumWidth = 6;
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            this.Role.ToolTipText = "Role";
+            // 
+            // Salary
+            // 
+            this.Salary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Salary.DataPropertyName = "Salary";
+            this.Salary.HeaderText = "Salary";
+            this.Salary.MinimumWidth = 6;
+            this.Salary.Name = "Salary";
+            this.Salary.ReadOnly = true;
+            this.Salary.ToolTipText = "Employee Salary";
+            // 
+            // lblAddMsg
+            // 
+            this.lblAddMsg.AutoSize = true;
+            this.lblAddMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblAddMsg.Location = new System.Drawing.Point(403, 26);
+            this.lblAddMsg.Name = "lblAddMsg";
+            this.lblAddMsg.Size = new System.Drawing.Size(285, 32);
+            this.lblAddMsg.TabIndex = 78;
+            this.lblAddMsg.Text = "*To add a new user fill up the text box\'s and\r\nclick in the save button. ";
+            this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
+            // 
+            // lblupdateMsg
+            // 
+            this.lblupdateMsg.AutoSize = true;
+            this.lblupdateMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblupdateMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblupdateMsg.Location = new System.Drawing.Point(403, 72);
+            this.lblupdateMsg.Name = "lblupdateMsg";
+            this.lblupdateMsg.Size = new System.Drawing.Size(335, 32);
+            this.lblupdateMsg.TabIndex = 79;
+            this.lblupdateMsg.Text = "*To update an user double click on the specific row,\r\nwrite in the text boxand cl" +
+    "ick to the save button. \r\n";
+            this.lblupdateMsg.Click += new System.EventHandler(this.lblupdateMsg_Click);
+            // 
+            // lblDeleteMsg
+            // 
+            this.lblDeleteMsg.AutoSize = true;
+            this.lblDeleteMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblDeleteMsg.Location = new System.Drawing.Point(403, 117);
+            this.lblDeleteMsg.Name = "lblDeleteMsg";
+            this.lblDeleteMsg.Size = new System.Drawing.Size(330, 32);
+            this.lblDeleteMsg.TabIndex = 80;
+            this.lblDeleteMsg.Text = "*To delete an user double click on the specific row,\r\nand click to the delete but" +
+    "ton. \r\n";
+            this.lblDeleteMsg.Click += new System.EventHandler(this.lblDeleteMsg_Click);
             // 
             // FormEmployeeList
             // 
@@ -369,11 +427,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.Panel pnlEmployeeList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Label lblSalary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblSalary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
+        private System.Windows.Forms.Label lblAddMsg;
+        private System.Windows.Forms.Label lblupdateMsg;
+        private System.Windows.Forms.Label lblDeleteMsg;
     }
 }

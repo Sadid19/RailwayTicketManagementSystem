@@ -24,7 +24,7 @@ namespace RailwayTicketManagementSystem
             //this.AutoIdGenerate();
         }
 
-        private void PopulateGridView(string sql = "select * from UserInfo;")
+        private void PopulateGridView(string sql = "select* from EmployeeTable;")
         {
             var ds = this.Da.ExecuteQuery(sql);
 
@@ -47,6 +47,7 @@ namespace RailwayTicketManagementSystem
             this.txtName.Clear();
             this.txtPassword.Clear();
             this.txtRole.Clear();
+            this.txtSalary.Clear();
 
             this.txtEmployeeListAutoSearch.Clear();
             this.dgvEmployeeList.ClearSelection();
@@ -73,18 +74,18 @@ namespace RailwayTicketManagementSystem
                 {
                     return;
                 }
-                    
-                var sql = "delete from UserInfo where Id ='" + id + "';";
+
+                var sql = "delete from EmployeeTable where UserId ='" + id + "';";
                 var count = this.Da.ExecuteDMLQuery(sql);
 
                 if (count == 1)
                 {
-                    MessageBox.Show(this.txtId.Text + " has been removed from the list.");
+                    MessageBox.Show(username + " has been removed from the list.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else
                 {
-                    MessageBox.Show("Data hasn't been removed properly!");
+                    MessageBox.Show("Data hasn't been removed properly!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 this.PopulateGridView();
@@ -98,7 +99,7 @@ namespace RailwayTicketManagementSystem
 
         private void txtEmployeeListAutoSearch_TextChanged(object sender, EventArgs e)
         {
-            var sql = "select * from UserInfo where Id like '"+ this.txtEmployeeListAutoSearch.Text +"%';";
+            var sql = "select * from EmployeeTable where UserId like '"+ this.txtEmployeeListAutoSearch.Text +"%';";
             this.PopulateGridView(sql);
         }
 
@@ -111,10 +112,11 @@ namespace RailwayTicketManagementSystem
         {
             try
             {
-                this.txtId.Text = this.dgvEmployeeList.CurrentRow.Cells["Id"].Value.ToString();
-                this.txtName.Text = this.dgvEmployeeList.CurrentRow.Cells["Username"].Value.ToString();
+                this.txtId.Text = this.dgvEmployeeList.CurrentRow.Cells["UserId"].Value.ToString();
+                this.txtName.Text = this.dgvEmployeeList.CurrentRow.Cells["UserName"].Value.ToString();
                 this.txtPassword.Text = this.dgvEmployeeList.CurrentRow.Cells["Password"].Value.ToString();
                 this.txtRole.Text = this.dgvEmployeeList.CurrentRow.Cells["Role"].Value.ToString();
+                this.txtSalary.Text = this.dgvEmployeeList.CurrentRow.Cells["Salary"].Value.ToString();
             }
             catch (Exception exc)
             {
@@ -126,11 +128,20 @@ namespace RailwayTicketManagementSystem
         private bool IsValidToSave()
         {
             if (string.IsNullOrEmpty(this.txtId.Text) || string.IsNullOrEmpty(this.txtName.Text) ||
-                string.IsNullOrEmpty(this.txtPassword.Text) || string.IsNullOrEmpty(this.txtRole.Text))
+                string.IsNullOrEmpty(this.txtPassword.Text) || string.IsNullOrEmpty(this.txtRole.Text) || string.IsNullOrEmpty(this.txtSalary.Text))
                 return false;
             else
                 return true;
         }
+
+        private void ClearTextBoxOnly()
+        {
+            this.txtName.Clear();
+            this.txtPassword.Clear();
+            this.txtRole.Clear();
+            this.txtSalary.Clear();
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -142,18 +153,19 @@ namespace RailwayTicketManagementSystem
                     return;
                 }
 
-                var query = "select * from UserInfo where Id = '" + this.txtId.Text + "'";
+                var query = "select * from EmployeeTable where UserId = '" + this.txtId.Text + "'";
                 DataTable dt = this.Da.ExecuteQueryTable(query);
                 if (dt.Rows.Count == 1)
                 {
                     //update
-                    var sql = @"update UserInfo
-                                set Username = '" + txtName.Text + @"',
-                                Password = '" + txtPassword.Text + @"',
-                                Role = '" + txtRole.Text + @"'
-                                where Id = '" + txtId.Text + "';";
-;
+                    var sql = @"update EmployeeTable
+                        set UserName = '" + txtName.Text + @"',
+                        Password = '" + txtPassword.Text + @"',
+                        Role = '" + txtRole.Text + @"',
+                        Salary = " + Convert.ToInt32(txtSalary.Text) + @"
+                        where UserId = '" + txtId.Text + "';";
                     int count = this.Da.ExecuteDMLQuery(sql);
+
 
                     if (count == 1)
                         MessageBox.Show("Data has been updated properly");
@@ -164,7 +176,7 @@ namespace RailwayTicketManagementSystem
                 else
                 {
                     //insert
-                    var sql = "insert into UserInfo values('" + this.txtId.Text + "', '" + this.txtName.Text + "', " + this.txtPassword.Text + ", '" + this.txtRole.Text + "');";
+                    var sql = "insert into EmployeeTable values('" + this.txtId.Text + "', '" + this.txtName.Text + "', '" + this.txtPassword.Text + "', '" + this.txtRole.Text + "', " + Convert.ToInt32(this.txtSalary.Text) + ");";
                     int count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
@@ -173,7 +185,9 @@ namespace RailwayTicketManagementSystem
                         MessageBox.Show("Data hasn't been added properly");
                 }
 
-                this.PopulateGridView(); 
+                this.PopulateGridView();
+                this.ClearTextBoxOnly();
+               
                 
             }
             catch (Exception exc)
@@ -191,7 +205,7 @@ namespace RailwayTicketManagementSystem
 
         private void AutoIdGenerate()
         {
-            var query = "select max(Id) from UserInfo;";
+            var query = "select max(UserId) from EmployeeTable;";
             var dt = this.Da.ExecuteQueryTable(query);
             var oldId = dt.Rows[0][0].ToString();
             string[] temp = oldId.Split('-');
@@ -209,6 +223,31 @@ namespace RailwayTicketManagementSystem
         private void FormEmployeeList_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvEmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAddMsg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblupdateMsg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDeleteMsg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,10 +113,32 @@ namespace RailwayTicketManagementSystem
             
         }
 
-        
-
         private void btnAddTrain_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (this.gdvTrainList.SelectedRows.Count > 0)
+                {
+                    var selectedRow = this.gdvTrainList.CurrentRow;
+                    var trainId = selectedRow.Cells["TrainId"].Value.ToString();
+
+                    var query = $"SELECT COUNT(*) FROM TrainInfo WHERE TrainId = '{trainId}';";
+                    var result = this.Da.ExecuteQueryTable(query);
+
+                    if (result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0][0]) > 0)
+                    {
+                        MessageBox.Show($"Train with ID {trainId} already exists in the TrainInfo table.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                FormTrainInfo formTrainInfo = new FormTrainInfo(this);
+                formTrainInfo.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -171,7 +193,7 @@ namespace RailwayTicketManagementSystem
                     MessageBox.Show("Informatoin added to the cart successfully!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cmbQuantity.SelectedIndex = -1;
                     this.lblTotalOutput.Text = "";
-                    this.CartGridView(); // Refresh cart view
+                    this.CartGridView(); 
                     this.gdvCart.ClearSelection();
                     
                 }
@@ -227,20 +249,151 @@ namespace RailwayTicketManagementSystem
                     else
                     {
                         return;
-                        //MessageBox.Show("Failed to cancel the ticket. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to cancel the ticket. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
                 }
-
             }
             catch (Exception ex) 
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            FormHistory formHistory = new FormHistory(this.Da);
+            formHistory.Show();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.gdvCart.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a row to confirm!", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = this.gdvCart.CurrentRow;
+                var invoiceNumber = selectedRow.Cells["InvoiceNumber"].Value.ToString();
+                var trainId = selectedRow.Cells["TrainIdCart"].Value.ToString();
+                var trainName = selectedRow.Cells["TrainNameCart"].Value.ToString();
+                var fromStation = selectedRow.Cells["FromStationCart"].Value.ToString();
+                var toStation = selectedRow.Cells["ToStationCart"].Value.ToString();
+                var price = Convert.ToDecimal(selectedRow.Cells["PriceCart"].Value);
+                var userId = selectedRow.Cells["UserId"].Value.ToString();
+
+                var insertSql = $"INSERT INTO HistoryTable (TrainIdHistory, TrainNameHistory, FromStationHistory, ToStationHistory, PriceHistory, UserIdHistory) " +
+                                $"VALUES ('{trainId}', '{trainName}', '{fromStation}', '{toStation}', {price}, '{userId}');";
+                var rowsInserted = Da.ExecuteDMLQuery(insertSql);
+
+                if (rowsInserted == 1)
+                {
+                    var deleteSql = $"DELETE FROM CartView WHERE InvoiceNumber = {invoiceNumber};";
+                    var rowsDeleted = Da.ExecuteDMLQuery(deleteSql);
+
+                    if (rowsDeleted == 1)
+                    {
+                        MessageBox.Show("The ticket has been confirmed and added to the history!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the grids
+                        this.CartGridView(); 
+                        this.gdvCart.ClearSelection();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to remove the ticket from the cart. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to confirm the ticket. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+        public void RefreshTrainListGrid()
+        {
+            this.TrainListGridView();
+        }
+
+        private void btnUpdateDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.gdvTrainList.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a row to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = this.gdvTrainList.CurrentRow;
+                string trainId = selectedRow.Cells["TrainId"].Value.ToString();
+                string trainName = selectedRow.Cells["TrainName"].Value.ToString();
+                string fromStation = selectedRow.Cells["FromStation"].Value.ToString();
+                string toStation = selectedRow.Cells["ToStation"].Value.ToString();
+                string available = selectedRow.Cells["Available"].Value.ToString();
+                string price = selectedRow.Cells["Price"].Value.ToString();
+
+                FormTrainInfo formTrainInfo = new FormTrainInfo(this, trainId, trainName, fromStation, toStation, available, price);
+                formTrainInfo.ShowDialog(); // Wait for form to close
+                this.TrainListGridView(); // Refresh Train List Grid
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                if (this.gdvTrainList.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a row to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = this.gdvTrainList.CurrentRow;
+                var trainId = selectedRow.Cells["TrainId"].Value.ToString();
+                var trainName = selectedRow.Cells["TrainName"].Value.ToString();
+
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete Train: {trainName} (ID: {trainId})?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    var sql = $"DELETE FROM TrainInfo WHERE TrainId = '{trainId}';";
+                    int rowsAffected = this.Da.ExecuteDMLQuery(sql);
+
+                    if (rowsAffected == 1)
+                    {
+                        MessageBox.Show($"Train {trainName} has been deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.TrainListGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete the train record. Please try again.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the train record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

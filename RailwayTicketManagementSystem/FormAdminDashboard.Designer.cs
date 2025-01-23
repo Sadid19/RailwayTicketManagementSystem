@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAdminDashboard = new System.Windows.Forms.Panel();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -40,6 +40,13 @@
             this.lblCart = new System.Windows.Forms.Label();
             this.lblTrainList = new System.Windows.Forms.Label();
             this.gdvCart = new System.Windows.Forms.DataGridView();
+            this.InvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrainIdCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrainNameCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.cmbQuantity = new System.Windows.Forms.ComboBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -53,13 +60,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnEmployeeList = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.InvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrainIdCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrainNameCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FromStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.pnlAdminDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).BeginInit();
@@ -68,6 +69,7 @@
             // pnlAdminDashboard
             // 
             this.pnlAdminDashboard.BackColor = System.Drawing.Color.White;
+            this.pnlAdminDashboard.Controls.Add(this.btnHistory);
             this.pnlAdminDashboard.Controls.Add(this.btnUpdateDetails);
             this.pnlAdminDashboard.Controls.Add(this.btnDelete);
             this.pnlAdminDashboard.Controls.Add(this.btnAddTrain);
@@ -103,6 +105,7 @@
             this.btnUpdateDetails.TabIndex = 26;
             this.btnUpdateDetails.Text = "Update Details";
             this.btnUpdateDetails.UseVisualStyleBackColor = false;
+            this.btnUpdateDetails.Click += new System.EventHandler(this.btnUpdateDetails_Click);
             // 
             // btnDelete
             // 
@@ -115,6 +118,7 @@
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddTrain
             // 
@@ -153,6 +157,7 @@
             this.btnConfirm.TabIndex = 22;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnContinue
             // 
@@ -183,7 +188,7 @@
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.Color.Green;
-            this.lblCart.Location = new System.Drawing.Point(1114, 72);
+            this.lblCart.Location = new System.Drawing.Point(1114, 78);
             this.lblCart.Name = "lblCart";
             this.lblCart.Size = new System.Drawing.Size(49, 21);
             this.lblCart.TabIndex = 19;
@@ -194,7 +199,7 @@
             this.lblTrainList.AutoSize = true;
             this.lblTrainList.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainList.ForeColor = System.Drawing.Color.Green;
-            this.lblTrainList.Location = new System.Drawing.Point(329, 72);
+            this.lblTrainList.Location = new System.Drawing.Point(329, 78);
             this.lblTrainList.Name = "lblTrainList";
             this.lblTrainList.Size = new System.Drawing.Size(101, 21);
             this.lblTrainList.TabIndex = 18;
@@ -213,7 +218,7 @@
             this.ToStationCart,
             this.PriceCart,
             this.UserId});
-            this.gdvCart.Location = new System.Drawing.Point(798, 106);
+            this.gdvCart.Location = new System.Drawing.Point(798, 112);
             this.gdvCart.Name = "gdvCart";
             this.gdvCart.ReadOnly = true;
             this.gdvCart.RowHeadersWidth = 51;
@@ -222,6 +227,69 @@
             this.gdvCart.Size = new System.Drawing.Size(730, 450);
             this.gdvCart.TabIndex = 17;
             this.gdvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvCart_CellContentClick);
+            // 
+            // InvoiceNumber
+            // 
+            this.InvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.InvoiceNumber.DataPropertyName = "InvoiceNumber";
+            this.InvoiceNumber.HeaderText = "Invoice No";
+            this.InvoiceNumber.MinimumWidth = 6;
+            this.InvoiceNumber.Name = "InvoiceNumber";
+            this.InvoiceNumber.ReadOnly = true;
+            // 
+            // TrainIdCart
+            // 
+            this.TrainIdCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainIdCart.DataPropertyName = "TrainIdCart";
+            this.TrainIdCart.HeaderText = "Train ID";
+            this.TrainIdCart.MinimumWidth = 6;
+            this.TrainIdCart.Name = "TrainIdCart";
+            this.TrainIdCart.ReadOnly = true;
+            // 
+            // TrainNameCart
+            // 
+            this.TrainNameCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrainNameCart.DataPropertyName = "TrainNameCart";
+            this.TrainNameCart.HeaderText = "Train Name";
+            this.TrainNameCart.MinimumWidth = 6;
+            this.TrainNameCart.Name = "TrainNameCart";
+            this.TrainNameCart.ReadOnly = true;
+            // 
+            // FromStationCart
+            // 
+            this.FromStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FromStationCart.DataPropertyName = "FromStationCart";
+            this.FromStationCart.HeaderText = "From Station";
+            this.FromStationCart.MinimumWidth = 6;
+            this.FromStationCart.Name = "FromStationCart";
+            this.FromStationCart.ReadOnly = true;
+            // 
+            // ToStationCart
+            // 
+            this.ToStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ToStationCart.DataPropertyName = "ToStationCart";
+            this.ToStationCart.HeaderText = "To Station";
+            this.ToStationCart.MinimumWidth = 6;
+            this.ToStationCart.Name = "ToStationCart";
+            this.ToStationCart.ReadOnly = true;
+            // 
+            // PriceCart
+            // 
+            this.PriceCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PriceCart.DataPropertyName = "PriceCart";
+            this.PriceCart.HeaderText = "Price";
+            this.PriceCart.MinimumWidth = 6;
+            this.PriceCart.Name = "PriceCart";
+            this.PriceCart.ReadOnly = true;
+            // 
+            // UserId
+            // 
+            this.UserId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserId.DataPropertyName = "UserId";
+            this.UserId.HeaderText = "User ID";
+            this.UserId.MinimumWidth = 6;
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
             // 
             // lblTotal
             // 
@@ -270,12 +338,12 @@
             this.ToStation,
             this.Available,
             this.Price});
-            this.gdvTrainList.Location = new System.Drawing.Point(12, 106);
+            this.gdvTrainList.Location = new System.Drawing.Point(12, 112);
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
@@ -341,9 +409,9 @@
             this.btnLogOut.BackColor = System.Drawing.Color.Green;
             this.btnLogOut.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(1380, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(1395, 12);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(115, 54);
+            this.btnLogOut.Size = new System.Drawing.Size(109, 48);
             this.btnLogOut.TabIndex = 10;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -354,9 +422,9 @@
             this.btnEmployeeList.BackColor = System.Drawing.Color.Green;
             this.btnEmployeeList.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeList.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEmployeeList.Location = new System.Drawing.Point(1259, 12);
+            this.btnEmployeeList.Location = new System.Drawing.Point(1274, 12);
             this.btnEmployeeList.Name = "btnEmployeeList";
-            this.btnEmployeeList.Size = new System.Drawing.Size(115, 54);
+            this.btnEmployeeList.Size = new System.Drawing.Size(109, 48);
             this.btnEmployeeList.TabIndex = 9;
             this.btnEmployeeList.Text = "Employee List";
             this.btnEmployeeList.UseVisualStyleBackColor = false;
@@ -373,68 +441,18 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome,";
             // 
-            // InvoiceNumber
+            // btnHistory
             // 
-            this.InvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.InvoiceNumber.DataPropertyName = "InvoiceNumber";
-            this.InvoiceNumber.HeaderText = "Invoice No";
-            this.InvoiceNumber.MinimumWidth = 6;
-            this.InvoiceNumber.Name = "InvoiceNumber";
-            this.InvoiceNumber.ReadOnly = true;
-            // 
-            // TrainIdCart
-            // 
-            this.TrainIdCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TrainIdCart.DataPropertyName = "TrainIdCart";
-            this.TrainIdCart.HeaderText = "Train ID";
-            this.TrainIdCart.MinimumWidth = 6;
-            this.TrainIdCart.Name = "TrainIdCart";
-            this.TrainIdCart.ReadOnly = true;
-            // 
-            // TrainNameCart
-            // 
-            this.TrainNameCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TrainNameCart.DataPropertyName = "TrainNameCart";
-            this.TrainNameCart.HeaderText = "Train Name";
-            this.TrainNameCart.MinimumWidth = 6;
-            this.TrainNameCart.Name = "TrainNameCart";
-            this.TrainNameCart.ReadOnly = true;
-            // 
-            // FromStationCart
-            // 
-            this.FromStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FromStationCart.DataPropertyName = "FromStationCart";
-            this.FromStationCart.HeaderText = "From Station";
-            this.FromStationCart.MinimumWidth = 6;
-            this.FromStationCart.Name = "FromStationCart";
-            this.FromStationCart.ReadOnly = true;
-            // 
-            // ToStationCart
-            // 
-            this.ToStationCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ToStationCart.DataPropertyName = "ToStationCart";
-            this.ToStationCart.HeaderText = "To Station";
-            this.ToStationCart.MinimumWidth = 6;
-            this.ToStationCart.Name = "ToStationCart";
-            this.ToStationCart.ReadOnly = true;
-            // 
-            // PriceCart
-            // 
-            this.PriceCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PriceCart.DataPropertyName = "PriceCart";
-            this.PriceCart.HeaderText = "Price";
-            this.PriceCart.MinimumWidth = 6;
-            this.PriceCart.Name = "PriceCart";
-            this.PriceCart.ReadOnly = true;
-            // 
-            // UserId
-            // 
-            this.UserId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UserId.DataPropertyName = "UserId";
-            this.UserId.HeaderText = "User ID";
-            this.UserId.MinimumWidth = 6;
-            this.UserId.Name = "UserId";
-            this.UserId.ReadOnly = true;
+            this.btnHistory.BackColor = System.Drawing.Color.Green;
+            this.btnHistory.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Location = new System.Drawing.Point(1149, 12);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(109, 48);
+            this.btnHistory.TabIndex = 27;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // FormAdminDashboard
             // 
@@ -490,5 +508,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ToStationCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.Button btnHistory;
     }
 }
