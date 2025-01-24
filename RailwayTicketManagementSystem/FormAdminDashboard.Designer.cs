@@ -92,7 +92,7 @@
             this.pnlAdminDashboard.Name = "pnlAdminDashboard";
             this.pnlAdminDashboard.Size = new System.Drawing.Size(1540, 753);
             this.pnlAdminDashboard.TabIndex = 0;
-            this.pnlAdminDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdminDashboard_Paint);
+            //this.pnlAdminDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdminDashboard_Paint);
             // 
             // btnUpdateDetails
             // 
@@ -226,7 +226,7 @@
             this.gdvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvCart.Size = new System.Drawing.Size(730, 450);
             this.gdvCart.TabIndex = 17;
-            this.gdvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvCart_CellContentClick);
+            //this.gdvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvCart_CellContentClick);
             // 
             // InvoiceNumber
             // 
@@ -348,7 +348,7 @@
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
             this.gdvTrainList.TabIndex = 11;
-            this.gdvTrainList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainList_CellContentClick);
+            //this.gdvTrainList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainList_CellContentClick);
             // 
             // TrainID
             // 
@@ -466,7 +466,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdminDashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAdminDashboard_FormClosed);
-            this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
+           // this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
             this.pnlAdminDashboard.ResumeLayout(false);
             this.pnlAdminDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).EndInit();

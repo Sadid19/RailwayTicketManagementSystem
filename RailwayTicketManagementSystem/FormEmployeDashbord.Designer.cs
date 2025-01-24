@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
@@ -85,8 +85,9 @@
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 594);
+            this.panel1.Size = new System.Drawing.Size(1533, 731);
             this.panel1.TabIndex = 0;
             // 
             // btnHistory
@@ -94,10 +95,10 @@
             this.btnHistory.BackColor = System.Drawing.Color.Green;
             this.btnHistory.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHistory.Location = new System.Drawing.Point(938, 16);
-            this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistory.Location = new System.Drawing.Point(1258, 20);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(82, 39);
+            this.btnHistory.Size = new System.Drawing.Size(109, 48);
             this.btnHistory.TabIndex = 41;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = false;
@@ -108,10 +109,10 @@
             this.btnUpdateDetails.BackColor = System.Drawing.Color.Green;
             this.btnUpdateDetails.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateDetails.ForeColor = System.Drawing.Color.Transparent;
-            this.btnUpdateDetails.Location = new System.Drawing.Point(315, 547);
-            this.btnUpdateDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateDetails.Location = new System.Drawing.Point(420, 673);
+            this.btnUpdateDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateDetails.Name = "btnUpdateDetails";
-            this.btnUpdateDetails.Size = new System.Drawing.Size(94, 32);
+            this.btnUpdateDetails.Size = new System.Drawing.Size(125, 39);
             this.btnUpdateDetails.TabIndex = 40;
             this.btnUpdateDetails.Text = "Update Details";
             this.btnUpdateDetails.UseVisualStyleBackColor = false;
@@ -122,10 +123,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.Green;
             this.btnDelete.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Location = new System.Drawing.Point(445, 547);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(593, 673);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 32);
+            this.btnDelete.Size = new System.Drawing.Size(109, 39);
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -136,10 +137,10 @@
             this.btnAddTrain.BackColor = System.Drawing.Color.Green;
             this.btnAddTrain.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTrain.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAddTrain.Location = new System.Drawing.Point(198, 547);
-            this.btnAddTrain.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddTrain.Location = new System.Drawing.Point(264, 673);
+            this.btnAddTrain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddTrain.Name = "btnAddTrain";
-            this.btnAddTrain.Size = new System.Drawing.Size(82, 32);
+            this.btnAddTrain.Size = new System.Drawing.Size(109, 39);
             this.btnAddTrain.TabIndex = 38;
             this.btnAddTrain.Text = "Add Train";
             this.btnAddTrain.UseVisualStyleBackColor = false;
@@ -150,10 +151,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.Green;
             this.btnCancel.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancel.Location = new System.Drawing.Point(1039, 507);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(1385, 624);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(71, 32);
+            this.btnCancel.Size = new System.Drawing.Size(95, 39);
             this.btnCancel.TabIndex = 37;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -164,10 +165,10 @@
             this.btnConfirm.BackColor = System.Drawing.Color.Green;
             this.btnConfirm.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.Location = new System.Drawing.Point(963, 507);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Location = new System.Drawing.Point(1284, 624);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(71, 32);
+            this.btnConfirm.Size = new System.Drawing.Size(95, 39);
             this.btnConfirm.TabIndex = 36;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -178,10 +179,10 @@
             this.btnContinue.BackColor = System.Drawing.Color.Green;
             this.btnContinue.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.Transparent;
-            this.btnContinue.Location = new System.Drawing.Point(490, 450);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContinue.Location = new System.Drawing.Point(653, 554);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(82, 32);
+            this.btnContinue.Size = new System.Drawing.Size(109, 39);
             this.btnContinue.TabIndex = 35;
             this.btnContinue.Text = "Continue>>";
             this.btnContinue.UseVisualStyleBackColor = false;
@@ -192,10 +193,9 @@
             this.lblTotalOutput.AutoSize = true;
             this.lblTotalOutput.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalOutput.ForeColor = System.Drawing.Color.Green;
-            this.lblTotalOutput.Location = new System.Drawing.Point(63, 507);
-            this.lblTotalOutput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalOutput.Location = new System.Drawing.Point(84, 624);
             this.lblTotalOutput.Name = "lblTotalOutput";
-            this.lblTotalOutput.Size = new System.Drawing.Size(105, 16);
+            this.lblTotalOutput.Size = new System.Drawing.Size(133, 21);
             this.lblTotalOutput.TabIndex = 34;
             this.lblTotalOutput.Text = "Total Outptut";
             // 
@@ -204,10 +204,9 @@
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCart.ForeColor = System.Drawing.Color.Green;
-            this.lblCart.Location = new System.Drawing.Point(829, 48);
-            this.lblCart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCart.Location = new System.Drawing.Point(1105, 59);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(38, 16);
+            this.lblCart.Size = new System.Drawing.Size(49, 21);
             this.lblCart.TabIndex = 33;
             this.lblCart.Text = "Cart";
             // 
@@ -216,10 +215,9 @@
             this.lblTrainList.AutoSize = true;
             this.lblTrainList.Font = new System.Drawing.Font("Mongolian Baiti", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainList.ForeColor = System.Drawing.Color.Green;
-            this.lblTrainList.Location = new System.Drawing.Point(240, 48);
-            this.lblTrainList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrainList.Location = new System.Drawing.Point(320, 59);
             this.lblTrainList.Name = "lblTrainList";
-            this.lblTrainList.Size = new System.Drawing.Size(79, 16);
+            this.lblTrainList.Size = new System.Drawing.Size(101, 21);
             this.lblTrainList.TabIndex = 32;
             this.lblTrainList.Text = "Train List";
             // 
@@ -236,14 +234,14 @@
             this.ToStationCart,
             this.PriceCart,
             this.UserId});
-            this.gdvCart.Location = new System.Drawing.Point(591, 76);
-            this.gdvCart.Margin = new System.Windows.Forms.Padding(2);
+            this.gdvCart.Location = new System.Drawing.Point(788, 94);
+            this.gdvCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gdvCart.Name = "gdvCart";
             this.gdvCart.ReadOnly = true;
             this.gdvCart.RowHeadersWidth = 51;
             this.gdvCart.RowTemplate.Height = 24;
             this.gdvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvCart.Size = new System.Drawing.Size(548, 366);
+            this.gdvCart.Size = new System.Drawing.Size(731, 450);
             this.gdvCart.TabIndex = 31;
             // 
             // InvoiceNumber
@@ -314,10 +312,9 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
-            this.lblTotal.Location = new System.Drawing.Point(4, 507);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Location = new System.Drawing.Point(5, 624);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(45, 16);
+            this.lblTotal.Size = new System.Drawing.Size(58, 21);
             this.lblTotal.TabIndex = 30;
             this.lblTotal.Text = "Total";
             // 
@@ -329,10 +326,10 @@
             "2",
             "3",
             "4"});
-            this.cmbQuantity.Location = new System.Drawing.Point(73, 464);
-            this.cmbQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbQuantity.Location = new System.Drawing.Point(97, 571);
+            this.cmbQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbQuantity.Name = "cmbQuantity";
-            this.cmbQuantity.Size = new System.Drawing.Size(43, 21);
+            this.cmbQuantity.Size = new System.Drawing.Size(56, 24);
             this.cmbQuantity.TabIndex = 29;
             // 
             // lblQuantity
@@ -340,10 +337,9 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Green;
-            this.lblQuantity.Location = new System.Drawing.Point(2, 464);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(3, 571);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(70, 16);
+            this.lblQuantity.Size = new System.Drawing.Size(89, 21);
             this.lblQuantity.TabIndex = 28;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -359,16 +355,16 @@
             this.ToStation,
             this.Available,
             this.Price});
-            this.gdvTrainList.Location = new System.Drawing.Point(2, 76);
-            this.gdvTrainList.Margin = new System.Windows.Forms.Padding(2);
+            this.gdvTrainList.Location = new System.Drawing.Point(3, 94);
+            this.gdvTrainList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvTrainList.Size = new System.Drawing.Size(578, 366);
+            this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
             this.gdvTrainList.TabIndex = 27;
             // 
             // TrainID
@@ -430,10 +426,10 @@
             this.btnLogOut.BackColor = System.Drawing.Color.Green;
             this.btnLogOut.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(1043, 11);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Location = new System.Drawing.Point(1394, 20);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(86, 44);
+            this.btnLogOut.Size = new System.Drawing.Size(112, 48);
             this.btnLogOut.TabIndex = 16;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -444,20 +440,20 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcome.Location = new System.Drawing.Point(12, 11);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(16, 14);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(79, 16);
+            this.lblWelcome.Size = new System.Drawing.Size(101, 21);
             this.lblWelcome.TabIndex = 2;
             this.lblWelcome.Text = "Welcome,";
             // 
             // FormEmployeDashbord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 595);
+            this.ClientSize = new System.Drawing.Size(1529, 732);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormEmployeDashbord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

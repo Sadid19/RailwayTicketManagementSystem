@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlFormTrainInfo = new System.Windows.Forms.Panel();
+            this.lblUpdateMsg = new System.Windows.Forms.Label();
+            this.lblAddMsg = new System.Windows.Forms.Label();
             this.txtAvailable = new System.Windows.Forms.TextBox();
             this.lblSearchbyTrainId = new System.Windows.Forms.Label();
             this.txtAutoSearch = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lblAddMsg = new System.Windows.Forms.Label();
-            this.lblUpdateMsg = new System.Windows.Forms.Label();
             this.pnlFormTrainInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainInfo)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +87,31 @@
             this.pnlFormTrainInfo.Name = "pnlFormTrainInfo";
             this.pnlFormTrainInfo.Size = new System.Drawing.Size(925, 660);
             this.pnlFormTrainInfo.TabIndex = 7;
-            this.pnlFormTrainInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormTrainInfo_Paint);
+            //this.pnlFormTrainInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormTrainInfo_Paint);
+            // 
+            // lblUpdateMsg
+            // 
+            this.lblUpdateMsg.AutoSize = true;
+            this.lblUpdateMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblUpdateMsg.Location = new System.Drawing.Point(376, 197);
+            this.lblUpdateMsg.Name = "lblUpdateMsg";
+            this.lblUpdateMsg.Size = new System.Drawing.Size(286, 32);
+            this.lblUpdateMsg.TabIndex = 80;
+            this.lblUpdateMsg.Text = "*To update a train write in the text box\'s and\r\nclick to the save button. \r\n";
+            //this.lblUpdateMsg.Click += new System.EventHandler(this.lblUpdateMsg_Click);
+            // 
+            // lblAddMsg
+            // 
+            this.lblAddMsg.AutoSize = true;
+            this.lblAddMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblAddMsg.Location = new System.Drawing.Point(376, 142);
+            this.lblAddMsg.Name = "lblAddMsg";
+            this.lblAddMsg.Size = new System.Drawing.Size(287, 32);
+            this.lblAddMsg.TabIndex = 79;
+            this.lblAddMsg.Text = "*To add a new train fill up the text box\'s and\r\nclick to the save button. \r\n";
+            //this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
             // 
             // txtAvailable
             // 
@@ -96,7 +120,7 @@
             this.txtAvailable.Name = "txtAvailable";
             this.txtAvailable.Size = new System.Drawing.Size(164, 27);
             this.txtAvailable.TabIndex = 75;
-            this.txtAvailable.TextChanged += new System.EventHandler(this.txtAvailable_TextChanged);
+            //this.txtAvailable.TextChanged += new System.EventHandler(this.txtAvailable_TextChanged);
             // 
             // lblSearchbyTrainId
             // 
@@ -139,7 +163,7 @@
             this.dgvTrainInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTrainInfo.Size = new System.Drawing.Size(901, 314);
             this.dgvTrainInfo.TabIndex = 70;
-            this.dgvTrainInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainInfo_CellContentClick);
+            //this.dgvTrainInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainInfo_CellContentClick);
             // 
             // TrainId
             // 
@@ -234,7 +258,7 @@
             this.txtTrainId.Name = "txtTrainId";
             this.txtTrainId.Size = new System.Drawing.Size(164, 27);
             this.txtTrainId.TabIndex = 18;
-            this.txtTrainId.TextChanged += new System.EventHandler(this.txtTrainId_TextChanged);
+            //this.txtTrainId.TextChanged += new System.EventHandler(this.txtTrainId_TextChanged);
             // 
             // lblPrice
             // 
@@ -245,7 +269,7 @@
             this.lblPrice.Size = new System.Drawing.Size(52, 21);
             this.lblPrice.TabIndex = 17;
             this.lblPrice.Text = "Price";
-            this.lblPrice.Click += new System.EventHandler(this.lblTotalSeat_Click);
+            //this.lblPrice.Click += new System.EventHandler(this.lblTotalSeat_Click);
             // 
             // lblAvailable
             // 
@@ -256,7 +280,7 @@
             this.lblAvailable.Size = new System.Drawing.Size(89, 21);
             this.lblAvailable.TabIndex = 16;
             this.lblAvailable.Text = "Available";
-            this.lblAvailable.Click += new System.EventHandler(this.lblAvailable_Click);
+            //this.lblAvailable.Click += new System.EventHandler(this.lblAvailable_Click);
             // 
             // lblTo
             // 
@@ -277,7 +301,7 @@
             this.lblFrom.Size = new System.Drawing.Size(117, 21);
             this.lblFrom.TabIndex = 14;
             this.lblFrom.Text = "From Station";
-            this.lblFrom.Click += new System.EventHandler(this.lblFrom_Click);
+            //this.lblFrom.Click += new System.EventHandler(this.lblFrom_Click);
             // 
             // lblTrainName
             // 
@@ -338,30 +362,6 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // lblAddMsg
-            // 
-            this.lblAddMsg.AutoSize = true;
-            this.lblAddMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblAddMsg.Location = new System.Drawing.Point(376, 142);
-            this.lblAddMsg.Name = "lblAddMsg";
-            this.lblAddMsg.Size = new System.Drawing.Size(287, 32);
-            this.lblAddMsg.TabIndex = 79;
-            this.lblAddMsg.Text = "*To add a new train fill up the text box\'s and\r\nclick to the save button. \r\n";
-            this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
-            // 
-            // lblUpdateMsg
-            // 
-            this.lblUpdateMsg.AutoSize = true;
-            this.lblUpdateMsg.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblUpdateMsg.Location = new System.Drawing.Point(376, 197);
-            this.lblUpdateMsg.Name = "lblUpdateMsg";
-            this.lblUpdateMsg.Size = new System.Drawing.Size(286, 32);
-            this.lblUpdateMsg.TabIndex = 80;
-            this.lblUpdateMsg.Text = "*To update a train write in the text box\'s and\r\nclick to the save button. \r\n";
-            this.lblUpdateMsg.Click += new System.EventHandler(this.lblUpdateMsg_Click);
-            // 
             // FormTrainInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -373,6 +373,7 @@
             this.Name = "FormTrainInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTrainInfo";
+            //this.Load += new System.EventHandler(this.FormTrainInfo_Load);
             this.pnlFormTrainInfo.ResumeLayout(false);
             this.pnlFormTrainInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainInfo)).EndInit();

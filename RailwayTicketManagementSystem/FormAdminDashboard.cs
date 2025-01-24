@@ -14,11 +14,15 @@ namespace RailwayTicketManagementSystem
     public partial class FormAdminDashboard : Form
     {
         private DataAccess Da { get; set; }
+
+        //private FormEmployeeList FormEmployeelist { get; set; }
+
         private string UserID { get; set; }
         public FormAdminDashboard()
         {
             InitializeComponent();
             this.Da = new DataAccess();
+            //this.FormEmployeelist = new FormEmployeeList();
             this.TrainListGridView();
             this.CartGridView();
             this.gdvTrainList.DataBindingComplete += gdvTrainList_DataBindingComplete;
@@ -31,6 +35,7 @@ namespace RailwayTicketManagementSystem
             this.lblWelcome.Text += info.ToUpper();
             this.UserID = userId;
         }
+
         private void gdvTrainList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             this.gdvTrainList.ClearSelection();
@@ -44,6 +49,7 @@ namespace RailwayTicketManagementSystem
                 gdvCart.ClearSelection();
             }
         }
+
         private void GdvCart_SelectionChanged(object sender, EventArgs e)
         {
 
@@ -62,8 +68,6 @@ namespace RailwayTicketManagementSystem
 
             this.gdvTrainList.ClearSelection();
             this.gdvTrainList.CurrentCell = null;
-
-
         }
 
         private void CartGridView(string sql = "select* from CartView;")
@@ -74,17 +78,6 @@ namespace RailwayTicketManagementSystem
             this.gdvCart.DataSource = ds.Tables[0];
         }
 
-
-        //private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-
-        //}
-
-        private void pnlAdminDashboard_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Logged out from the system");
@@ -93,24 +86,12 @@ namespace RailwayTicketManagementSystem
             formLogin.Show();
         }
 
-        private void FormAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-            Application.Exit();
-        }
-
-        //private void btnTrainInfo_Click(object sender, EventArgs e)
-        //{
-        //     new FormTrainInfo(this).Show();           
-        //     this.Visible = false;
-
-        //}
-
         private void btnEmployeeList_Click(object sender, EventArgs e)
         {
-            new FormEmployeeList(this).Show();
-            this.Visible = false;
-            
+            FormEmployeeList formEmployeeList = new FormEmployeeList(this); 
+            formEmployeeList.Show(); 
+            this.Hide();
+
         }
 
         private void btnAddTrain_Click(object sender, EventArgs e)
@@ -139,11 +120,6 @@ namespace RailwayTicketManagementSystem
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        private void dgvTrainList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -211,16 +187,6 @@ namespace RailwayTicketManagementSystem
 
         }
 
-        private void gdvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormAdminDashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             try
@@ -265,8 +231,9 @@ namespace RailwayTicketManagementSystem
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            FormHistory formHistory = new FormHistory(this.Da);
+            FormHistory formHistory = new FormHistory(this.Da, this);
             formHistory.Show();
+            this.Hide();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -349,7 +316,6 @@ namespace RailwayTicketManagementSystem
                 FormTrainInfo formTrainInfo = new FormTrainInfo(this, trainId, trainName, fromStation, toStation, available, price);
                 formTrainInfo.ShowDialog(); // Wait for form to close
                 this.TrainListGridView(); // Refresh Train List Grid
-                //this.RefreshTrainListGrid();
             }
             catch (Exception ex)
             {
@@ -395,6 +361,12 @@ namespace RailwayTicketManagementSystem
             {
                 MessageBox.Show($"An error occurred while deleting the train record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Application.Exit();
         }
     }
 }

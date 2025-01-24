@@ -59,24 +59,14 @@ namespace RailwayTicketManagementSystem
 
             this.gdvTrainList.ClearSelection();
             this.gdvTrainList.CurrentCell = null;
-
-
         }
+
         private void CartGridView(string sql = "select* from CartView;")
         {
             var ds = this.Da.ExecuteQuery(sql);
 
             this.gdvCart.AutoGenerateColumns = false;
             this.gdvCart.DataSource = ds.Tables[0];
-        }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblWelcomeOutput_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogOut_Click_1(object sender, EventArgs e)
@@ -351,6 +341,7 @@ namespace RailwayTicketManagementSystem
 
             FormHistory formHistory = new FormHistory(this.Da,this.UserID);
             formHistory.Show();
+            this.Hide();
         }
 
         private void FormEmployeDashbord_FormClosed(object sender, FormClosedEventArgs e)

@@ -25,11 +25,6 @@ namespace RailwayTicketManagementSystem
             get { return this.txtUserId.Text; }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -53,8 +48,6 @@ namespace RailwayTicketManagementSystem
                     return;
                 }
 
-                //Da.ExecuteQuery(sqlEmployee);
-
                 Da.ExecuteQuery(sqlEmployee);
                 if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
@@ -73,11 +66,6 @@ namespace RailwayTicketManagementSystem
             {
                 MessageBox.Show("An error occurred: " + exc.Message);
             }
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)

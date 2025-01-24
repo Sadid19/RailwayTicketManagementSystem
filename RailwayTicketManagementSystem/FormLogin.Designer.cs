@@ -52,7 +52,7 @@
             this.pnlloginForm.Name = "pnlloginForm";
             this.pnlloginForm.Size = new System.Drawing.Size(379, 321);
             this.pnlloginForm.TabIndex = 0;
-            this.pnlloginForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.pnlloginForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnClear
             // 
@@ -138,7 +138,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
-            this.Load += new System.EventHandler(this.FormLogin_Load);
+            //this.Load += new System.EventHandler(this.FormLogin_Load);
             this.pnlloginForm.ResumeLayout(false);
             this.pnlloginForm.PerformLayout();
             this.ResumeLayout(false);

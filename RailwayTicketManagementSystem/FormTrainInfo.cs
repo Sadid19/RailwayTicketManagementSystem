@@ -24,11 +24,6 @@ namespace RailwayTicketManagementSystem
             this.PopulateGridView();
         }
 
-        //public FormTrainInfo(FormAdminDashboard formAdminDashboard) : this()
-        //{
-        //    this.FormAdmindashboard = formAdminDashboard;
-        //}
-
         public FormTrainInfo(FormAdminDashboard adminDashboard) : this()
         {
             this.FormAdmindashboard = adminDashboard;
@@ -74,30 +69,10 @@ namespace RailwayTicketManagementSystem
             this.dgvTrainInfo.CurrentCell = null;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.FormAdmindashboard.Show();
-        }
-
-        private void lblTotalSeat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlFormTrainInfo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void ClearTextBoxOnly()
@@ -122,10 +97,6 @@ namespace RailwayTicketManagementSystem
             var num = Convert.ToInt32(temp[1]);
             var newId = "tr-" + (++num).ToString("d3");
             this.txtTrainId.Text = newId;
-        }
-        private void txtTrainId_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private bool IsValidToSave()
@@ -187,41 +158,10 @@ namespace RailwayTicketManagementSystem
             }
         }
 
-
         private void txtAutoSearch_TextChanged(object sender, EventArgs e)
         {
             var sql = "select * from TrainInfo where TrainId like '" + this.txtAutoSearch.Text + "%';";
             this.PopulateGridView(sql);
-        }
-
-        private void dgvTrainInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void lblFrom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAvailable_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAvailable_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddMsg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUpdateMsg_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -36,11 +36,6 @@ namespace RailwayTicketManagementSystem
             this.FormAdmindashboard = formAdminDashboard;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnClearAll_Click(object sender, EventArgs e)
         {
             this.txtId.Clear();
@@ -198,7 +193,6 @@ namespace RailwayTicketManagementSystem
 
         private void FormEmployeeList_Load(object sender, EventArgs e)
         {
-            //this.PopulateGridView();
             this.dgvEmployeeList.ClearSelection();
             this.AutoIdGenerate();
         }
@@ -210,14 +204,16 @@ namespace RailwayTicketManagementSystem
             var oldId = dt.Rows[0][0].ToString();
             string[] temp = oldId.Split('-');
             var num = Convert.ToInt32(temp[1]);
-            var newId = "u-" + (++num).ToString("d3");
+            var newId = "e-" + (++num).ToString("d3");
             this.txtId.Text = newId;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            
+            FormAdmindashboard.Show();
             this.Hide();
-            this.FormAdmindashboard.Show();
+
         }
 
         private void FormEmployeeList_FormClosed(object sender, FormClosedEventArgs e)
@@ -225,29 +221,5 @@ namespace RailwayTicketManagementSystem
             Application.Exit();
         }
 
-        private void dgvEmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddMsg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblupdateMsg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDeleteMsg_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

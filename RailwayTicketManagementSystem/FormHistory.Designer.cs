@@ -41,12 +41,14 @@
             this.ToStationCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceCart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.lblSearchbyId);
             this.panel1.Controls.Add(this.txtUserIDSearch);
             this.panel1.Controls.Add(this.btnBack);
@@ -54,7 +56,7 @@
             this.panel1.Controls.Add(this.gdvHistory);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 646);
             this.panel1.TabIndex = 0;
@@ -74,7 +76,7 @@
             // txtUserIDSearch
             // 
             this.txtUserIDSearch.Location = new System.Drawing.Point(818, 79);
-            this.txtUserIDSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserIDSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserIDSearch.Name = "txtUserIDSearch";
             this.txtUserIDSearch.Size = new System.Drawing.Size(97, 22);
             this.txtUserIDSearch.TabIndex = 75;
@@ -85,7 +87,7 @@
             this.btnBack.BackColor = System.Drawing.Color.Green;
             this.btnBack.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBack.Location = new System.Drawing.Point(403, 582);
+            this.btnBack.Location = new System.Drawing.Point(29, 581);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(109, 39);
@@ -193,16 +195,31 @@
             this.UserId.ReadOnly = true;
             this.UserId.ToolTipText = "Ticket sell by";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Green;
+            this.btnDelete.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Location = new System.Drawing.Point(792, 581);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(123, 39);
+            this.btnDelete.TabIndex = 77;
+            this.btnDelete.Text = "Delete History";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FormHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 646);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHistory";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormHistory_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvHistory)).EndInit();
@@ -225,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ToStationCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

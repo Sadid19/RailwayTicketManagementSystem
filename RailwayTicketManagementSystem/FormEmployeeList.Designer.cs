@@ -115,7 +115,7 @@
             this.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployeeList.Size = new System.Drawing.Size(799, 314);
             this.dgvEmployeeList.TabIndex = 70;
-            this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
+            //this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             this.dgvEmployeeList.DoubleClick += new System.EventHandler(this.dgvEmployeeList_DoubleClick);
             // 
             // txtRole
@@ -180,7 +180,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(823, 671);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtSalary
             // 
@@ -207,7 +207,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(164, 27);
             this.txtId.TabIndex = 18;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            //this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // lblRole
             // 
@@ -357,7 +357,7 @@
             this.lblAddMsg.Size = new System.Drawing.Size(285, 32);
             this.lblAddMsg.TabIndex = 78;
             this.lblAddMsg.Text = "*To add a new user fill up the text box\'s and\r\nclick in the save button. ";
-            this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
+            //this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
             // 
             // lblupdateMsg
             // 
@@ -370,7 +370,7 @@
             this.lblupdateMsg.TabIndex = 79;
             this.lblupdateMsg.Text = "*To update an user double click on the specific row,\r\nwrite in the text boxand cl" +
     "ick to the save button. \r\n";
-            this.lblupdateMsg.Click += new System.EventHandler(this.lblupdateMsg_Click);
+            //this.lblupdateMsg.Click += new System.EventHandler(this.lblupdateMsg_Click);
             // 
             // lblDeleteMsg
             // 
@@ -383,7 +383,7 @@
             this.lblDeleteMsg.TabIndex = 80;
             this.lblDeleteMsg.Text = "*To delete an user double click on the specific row,\r\nand click to the delete but" +
     "ton. \r\n";
-            this.lblDeleteMsg.Click += new System.EventHandler(this.lblDeleteMsg_Click);
+            //this.lblDeleteMsg.Click += new System.EventHandler(this.lblDeleteMsg_Click);
             // 
             // FormEmployeeList
             // 
