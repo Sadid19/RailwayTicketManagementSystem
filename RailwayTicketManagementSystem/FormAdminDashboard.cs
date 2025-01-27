@@ -14,20 +14,16 @@ namespace RailwayTicketManagementSystem
     public partial class FormAdminDashboard : Form
     {
         private DataAccess Da { get; set; }
-
-        //private FormEmployeeList FormEmployeelist { get; set; }
-
         private string UserID { get; set; }
         public FormAdminDashboard()
         {
             InitializeComponent();
             this.Da = new DataAccess();
-            //this.FormEmployeelist = new FormEmployeeList();
             this.TrainListGridView();
             this.CartGridView();
             this.gdvTrainList.DataBindingComplete += gdvTrainList_DataBindingComplete;
-            this.gdvCart.SelectionChanged += new EventHandler(GdvCart_SelectionChanged);
-            this.gdvTrainList.SelectionChanged += new EventHandler(GdvTrainList_SelectionChanged);
+            this.gdvTrainList.SelectionChanged += gdvTrainList_SelectionChanged_1;
+            this.gdvCart.SelectionChanged += gdvCart_SelectionChanged_1;
         }
 
         public FormAdminDashboard(string info, string userId) : this()
@@ -36,42 +32,18 @@ namespace RailwayTicketManagementSystem
             this.UserID = userId;
         }
 
-        private void gdvTrainList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void TrainListGridView()
         {
-            this.gdvTrainList.ClearSelection();
-        }
-
-        private void GdvTrainList_SelectionChanged(object sender, EventArgs e)
-        {
-
-            if (gdvTrainList.SelectedRows.Count > 0)
-            {
-                gdvCart.ClearSelection();
-            }
-        }
-
-        private void GdvCart_SelectionChanged(object sender, EventArgs e)
-        {
-
-            if (gdvCart.SelectedRows.Count > 0)
-            {
-                gdvTrainList.ClearSelection();
-            }
-        }
-
-        private void TrainListGridView(string sql = "select* from TrainInfo;")
-        {
+            string sql = "select* from TrainInfo;";
             var ds = this.Da.ExecuteQuery(sql);
 
             this.gdvTrainList.AutoGenerateColumns = false;
             this.gdvTrainList.DataSource = ds.Tables[0];
-
-            this.gdvTrainList.ClearSelection();
-            this.gdvTrainList.CurrentCell = null;
         }
 
-        private void CartGridView(string sql = "select* from CartView;")
+        private void CartGridView()
         {
+            string sql = $"select * from CartView where UserId = '{ this.UserID }';";
             var ds = this.Da.ExecuteQuery(sql);
 
             this.gdvCart.AutoGenerateColumns = false;
@@ -113,8 +85,9 @@ namespace RailwayTicketManagementSystem
                     }
                 }
 
-                FormTrainInfo formTrainInfo = new FormTrainInfo(this);
+                FormTrainInfo formTrainInfo = new FormTrainInfo(this, this.UserID);
                 formTrainInfo.ShowDialog();
+                this.RefreshTrainListGrid();
             }
             catch (Exception ex)
             {
@@ -157,7 +130,7 @@ namespace RailwayTicketManagementSystem
                 int quantity = Convert.ToInt32(cmbQuantity.SelectedItem.ToString());
                 decimal total = price * quantity;
 
-                this.lblTotalOutput.Text = total.ToString();
+                this.lblAmount.Text = total.ToString();
 
                 this.gdvTrainList.ClearSelection();
 
@@ -168,7 +141,7 @@ namespace RailwayTicketManagementSystem
                 {
                     MessageBox.Show("Informatoin added to the cart successfully!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cmbQuantity.SelectedIndex = -1;
-                    this.lblTotalOutput.Text = "";
+                    this.lblAmount.Text = "";
                     this.CartGridView(); 
                     this.gdvCart.ClearSelection();
                     
@@ -231,7 +204,7 @@ namespace RailwayTicketManagementSystem
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            FormHistory formHistory = new FormHistory(this.Da, this);
+            FormHistory formHistory = new FormHistory(this, this.UserID);
             formHistory.Show();
             this.Hide();
         }
@@ -266,9 +239,9 @@ namespace RailwayTicketManagementSystem
 
                     if (rowsDeleted == 1)
                     {
+                        this.Da.ExecuteDMLQuery("DBCC CHECKIDENT('CartView', RESEED, 0);");
                         MessageBox.Show("The ticket has been confirmed and added to the history!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Refresh the grids
                         this.CartGridView(); 
                         this.gdvCart.ClearSelection();
                     }
@@ -292,7 +265,14 @@ namespace RailwayTicketManagementSystem
         }
         public void RefreshTrainListGrid()
         {
-            this.TrainListGridView();
+            try
+            {
+                this.TrainListGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while refreshing train list: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnUpdateDetails_Click(object sender, EventArgs e)
@@ -313,9 +293,10 @@ namespace RailwayTicketManagementSystem
                 string available = selectedRow.Cells["Available"].Value.ToString();
                 string price = selectedRow.Cells["Price"].Value.ToString();
 
-                FormTrainInfo formTrainInfo = new FormTrainInfo(this, trainId, trainName, fromStation, toStation, available, price);
-                formTrainInfo.ShowDialog(); // Wait for form to close
-                this.TrainListGridView(); // Refresh Train List Grid
+                FormTrainInfo formTrainInfo = new FormTrainInfo(this, trainId, trainName, fromStation, toStation, available, price, this.UserID);
+                formTrainInfo.ShowDialog(); 
+
+                this.RefreshTrainListGrid(); 
             }
             catch (Exception ex)
             {
@@ -347,8 +328,7 @@ namespace RailwayTicketManagementSystem
                     if (rowsAffected == 1)
                     {
                         MessageBox.Show($"Train {trainName} has been deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        this.TrainListGridView();
+                        this.RefreshTrainListGrid();
                     }
                     else
                     {
@@ -368,5 +348,28 @@ namespace RailwayTicketManagementSystem
 
             Application.Exit();
         }
+
+        private void gdvTrainList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            this.gdvTrainList.ClearSelection();
+        }
+
+        private void gdvTrainList_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (gdvTrainList.SelectedRows.Count > 0)
+            {
+                gdvCart.ClearSelection();
+            }
+
+        }
+
+        private void gdvCart_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (gdvCart.SelectedRows.Count > 0)
+            {
+                gdvTrainList.ClearSelection();
+            }
+        }
+
     }
 }
