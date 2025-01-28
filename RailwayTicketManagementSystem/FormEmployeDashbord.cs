@@ -147,8 +147,8 @@ namespace RailwayTicketManagementSystem
                     MessageBox.Show("Informatoin added to the cart successfully!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cmbQuantity.SelectedIndex = -1;
                     this.lblAmount.Text = "";
-                    this.RefreshTrainListGrid();
-                    //this.gdvCart.ClearSelection();
+                    this.CartGridView();
+                    this.gdvCart.ClearSelection();
 
                 }
                 else
@@ -159,7 +159,7 @@ namespace RailwayTicketManagementSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("This Information Already Exist in the Cart!  "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This Information Already Exist in the Cart!  " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.gdvTrainList.ClearSelection();
 
@@ -258,13 +258,14 @@ namespace RailwayTicketManagementSystem
 
                 if (rowsInserted == 1)
                 {
-                    this.Da.ExecuteDMLQuery("DBCC CHECKIDENT('CartView', RESEED, 0);");
                     var deleteSql = $"DELETE FROM CartView WHERE InvoiceNumber = {invoiceNumber};";
                     var rowsDeleted = Da.ExecuteDMLQuery(deleteSql);
 
                     if (rowsDeleted == 1)
                     {
+                        //this.Da.ExecuteDMLQuery("DBCC CHECKIDENT('CartView', RESEED, 0);");
                         MessageBox.Show("The ticket has been confirmed and added to the history!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.CartGridView();
                         this.gdvCart.ClearSelection();
                     }
