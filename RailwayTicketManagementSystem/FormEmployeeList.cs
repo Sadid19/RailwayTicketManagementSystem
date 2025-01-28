@@ -221,9 +221,5 @@ namespace RailwayTicketManagementSystem
             Application.Exit();
         }
 
-        private void dgvEmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

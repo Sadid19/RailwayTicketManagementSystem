@@ -16,8 +16,7 @@ namespace RailwayTicketManagementSystem
     {
         private DataAccess Da { get; set; }
         private FormAdminDashboard FormAdmindashboard {  get; set; }
-        private FormEmployeDashbord FormEmployeedashboard {  get; set; }
-        private string UserId { get; set; }
+        private FormEmployeDashbord FormEmployeedashbord {  get; set; }
         public FormTrainInfo()
         {
             InitializeComponent();
@@ -25,22 +24,18 @@ namespace RailwayTicketManagementSystem
             this.PopulateGridView();
         }
 
-        public FormTrainInfo(FormAdminDashboard adminDashboard, string id) : this()
+        public FormTrainInfo(FormAdminDashboard adminDashboard) : this()
         {
             this.FormAdmindashboard = adminDashboard;
-            this.UserId = id;
             this.AutoIdGenerate();
         }
-
-        public FormTrainInfo(FormEmployeDashbord employeeDashbord, string id) : this()
+        public FormTrainInfo(FormEmployeDashbord employeDashbord) : this()
         {
-            this.FormEmployeedashboard = employeeDashbord;
-            this.UserId = id;
+            this.FormEmployeedashbord =   employeDashbord;
             this.AutoIdGenerate();
         }
 
-
-        public FormTrainInfo(FormAdminDashboard adminDashboard, string trainId, string trainName, string fromStation, string toStation, string available, string price, string id) : this()
+        public FormTrainInfo(FormAdminDashboard adminDashboard, string trainId, string trainName, string fromStation, string toStation, string available, string price) : this()
         {
             this.FormAdmindashboard = adminDashboard;
             this.txtTrainId.Text = trainId;
@@ -49,23 +44,18 @@ namespace RailwayTicketManagementSystem
             this.txtTo.Text = toStation;
             this.txtAvailable.Text = available;
             this.txtPrice.Text = price;
-            this.txtTrainId.Enabled = false;
-
-            this.UserId = id;
+            this.txtTrainId.Enabled = false; // Disable editing TrainId
         }
-
-        public FormTrainInfo(FormEmployeDashbord employeeDashboard, string trainId, string trainName, string fromStation, string toStation, string available, string price, string id) : this()
+        public FormTrainInfo(FormEmployeDashbord EDashboard, string trainId, string trainName, string fromStation, string toStation, string available, string price) : this()
         {
-            this.FormEmployeedashboard = employeeDashboard;
+            this.FormEmployeedashbord = EDashboard;
             this.txtTrainId.Text = trainId;
             this.txtTrainName.Text = trainName;
             this.txtFrom.Text = fromStation;
             this.txtTo.Text = toStation;
             this.txtAvailable.Text = available;
             this.txtPrice.Text = price;
-            this.txtTrainId.Enabled = false;
-
-            this.UserId = id;
+            this.txtTrainId.Enabled = false; // Disable editing TrainId
         }
 
         private void PopulateGridView(string sql = "select* from TrainInfo;")
@@ -74,21 +64,15 @@ namespace RailwayTicketManagementSystem
 
             this.dgvTrainInfo.AutoGenerateColumns = false;
             this.dgvTrainInfo.DataSource = ds.Tables[0];
+
+            this.dgvTrainInfo.ClearSelection();
+            this.dgvTrainInfo.CurrentCell = null;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (UserId[0] == 'a')
-            {
-                this.Hide();
-                FormAdmindashboard.Show();
-
-            }
-            else if (UserId[0] == 'e')
-            {
-                this.Hide();
-                FormEmployeedashboard.Show();
-            }
+            this.Hide();
+            this.FormAdmindashboard.Show();
         }
 
         private void ClearTextBoxOnly()
@@ -139,25 +123,18 @@ namespace RailwayTicketManagementSystem
                 if (dt.Rows.Count == 1)
                 {
                     var sql = @"update TrainInfo
-                    set TrainName = '" + txtTrainName.Text + @"',
-                    FromStation = '" + txtFrom.Text + @"',
-                    ToStation = '" + txtTo.Text + @"',
-                    Available = '" + txtAvailable.Text + @"',
-                    Price = '" + Convert.ToDecimal(txtPrice.Text) + @"'
-                    where TrainId = '" + txtTrainId.Text + "';";
+                set TrainName = '" + txtTrainName.Text + @"',
+                FromStation = '" + txtFrom.Text + @"',
+                ToStation = '" + txtTo.Text + @"',
+                Available = '" + txtAvailable.Text + @"',
+                Price = '" + Convert.ToDecimal(txtPrice.Text) + @"'
+                where TrainId = '" + txtTrainId.Text + "';";
                     int count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
-                    {
                         MessageBox.Show("Data has been updated properly");
-                        this.PopulateGridView();
-                    }
-                        
                     else
-                    {
                         MessageBox.Show("Data hasn't been updated properly");
-                    }
-                        
                 }
                 else
                 {
@@ -165,20 +142,15 @@ namespace RailwayTicketManagementSystem
                     int count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
-                    {
                         MessageBox.Show("Data has been added properly");
-                        this.PopulateGridView();
-                    }
-                        
                     else
-                    {
                         MessageBox.Show("Data hasn't been added properly");
-                    }
-                        
                 }
+
                 this.PopulateGridView();
-                this.dgvTrainInfo.ClearSelection();
                 this.ClearTextBoxOnly();
+
+                this.FormAdmindashboard.RefreshTrainListGrid();
             }
             catch (Exception exc)
             {
@@ -190,11 +162,6 @@ namespace RailwayTicketManagementSystem
         {
             var sql = "select * from TrainInfo where TrainId like '" + this.txtAutoSearch.Text + "%';";
             this.PopulateGridView(sql);
-        }
-
-        private void FormTrainInfo_Load(object sender, EventArgs e)
-        {
-            this.dgvTrainInfo.ClearSelection();
         }
     }
 }

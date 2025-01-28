@@ -41,7 +41,7 @@ namespace RailwayTicketManagementSystem
                 if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
                     string name = Da.Ds.Tables[0].Rows[0]["UserName"].ToString();
-                    MessageBox.Show("Login Successfui!");
+                    MessageBox.Show("Login Successful as Admin!");
                     this.Visible = false;
                     
                     new FormAdminDashboard(name, this.UserID).Show();
@@ -52,7 +52,7 @@ namespace RailwayTicketManagementSystem
                 if (Da.Ds.Tables[0].Rows.Count == 1)
                 {
                     var name = Da.Ds.Tables[0].Rows[0]["UserName"].ToString();
-                    MessageBox.Show("Login Successful!");
+                    MessageBox.Show("Login Successful as Employee!");
                     this.Visible = false;
                     new FormEmployeDashbord(name, this.UserID).Show();
                     return;
@@ -90,11 +90,6 @@ namespace RailwayTicketManagementSystem
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void lblRailwaiTicketSystem_Click(object sender, EventArgs e)
-        {
 
         }
     }

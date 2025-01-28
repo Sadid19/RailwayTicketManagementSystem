@@ -133,26 +133,6 @@ namespace RailwayTicketManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogInPic {
-            get {
-                object obj = ResourceManager.GetObject("LogInPic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LogInPic1 {
-            get {
-                object obj = ResourceManager.GetObject("LogInPic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Profile_icon {
             get {
                 object obj = ResourceManager.GetObject("Profile icon", resourceCulture);
@@ -163,69 +143,9 @@ namespace RailwayTicketManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rsz_1loginpic {
-            get {
-                object obj = ResourceManager.GetObject("rsz_1loginpic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_2loginpic {
-            get {
-                object obj = ResourceManager.GetObject("rsz_2loginpic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap rsz_usericon {
             get {
                 object obj = ResourceManager.GetObject("rsz_usericon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_usericon1 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_usericon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_usericon2 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_usericon2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_usericon3 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_usericon3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_usericon4 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_usericon4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.lblTotalOutput = new System.Windows.Forms.Label();
             this.lblCart = new System.Windows.Forms.Label();
             this.lblTrainList = new System.Windows.Forms.Label();
             this.gdvCart = new System.Windows.Forms.DataGridView();
@@ -59,21 +60,13 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblTk = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.pbProfileIcon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfileIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pbProfileIcon);
-            this.panel1.Controls.Add(this.lblTk);
-            this.panel1.Controls.Add(this.lblAmount);
             this.panel1.Controls.Add(this.btnHistory);
             this.panel1.Controls.Add(this.btnUpdateDetails);
             this.panel1.Controls.Add(this.btnDelete);
@@ -81,6 +74,7 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.btnContinue);
+            this.panel1.Controls.Add(this.lblTotalOutput);
             this.panel1.Controls.Add(this.lblCart);
             this.panel1.Controls.Add(this.lblTrainList);
             this.panel1.Controls.Add(this.gdvCart);
@@ -91,7 +85,7 @@
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1533, 731);
             this.panel1.TabIndex = 0;
@@ -157,7 +151,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Green;
             this.btnCancel.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancel.Location = new System.Drawing.Point(1394, 574);
+            this.btnCancel.Location = new System.Drawing.Point(1385, 624);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 39);
@@ -171,7 +165,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.Green;
             this.btnConfirm.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.Location = new System.Drawing.Point(1281, 574);
+            this.btnConfirm.Location = new System.Drawing.Point(1284, 624);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(95, 39);
@@ -193,6 +187,17 @@
             this.btnContinue.Text = "Continue>>";
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // lblTotalOutput
+            // 
+            this.lblTotalOutput.AutoSize = true;
+            this.lblTotalOutput.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOutput.ForeColor = System.Drawing.Color.Green;
+            this.lblTotalOutput.Location = new System.Drawing.Point(84, 624);
+            this.lblTotalOutput.Name = "lblTotalOutput";
+            this.lblTotalOutput.Size = new System.Drawing.Size(133, 21);
+            this.lblTotalOutput.TabIndex = 34;
+            this.lblTotalOutput.Text = "Total Outptut";
             // 
             // lblCart
             // 
@@ -238,7 +243,6 @@
             this.gdvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvCart.Size = new System.Drawing.Size(731, 450);
             this.gdvCart.TabIndex = 31;
-            this.gdvCart.SelectionChanged += new System.EventHandler(this.gdvCart_SelectionChanged_1);
             // 
             // InvoiceNumber
             // 
@@ -308,7 +312,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
-            this.lblTotal.Location = new System.Drawing.Point(34, 614);
+            this.lblTotal.Location = new System.Drawing.Point(5, 624);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(58, 21);
             this.lblTotal.TabIndex = 30;
@@ -322,7 +326,7 @@
             "2",
             "3",
             "4"});
-            this.cmbQuantity.Location = new System.Drawing.Point(126, 561);
+            this.cmbQuantity.Location = new System.Drawing.Point(97, 571);
             this.cmbQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbQuantity.Name = "cmbQuantity";
             this.cmbQuantity.Size = new System.Drawing.Size(56, 24);
@@ -333,7 +337,7 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Green;
-            this.lblQuantity.Location = new System.Drawing.Point(32, 561);
+            this.lblQuantity.Location = new System.Drawing.Point(3, 571);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(89, 21);
             this.lblQuantity.TabIndex = 28;
@@ -351,20 +355,17 @@
             this.ToStation,
             this.Available,
             this.Price});
-            this.gdvTrainList.Location = new System.Drawing.Point(13, 94);
+            this.gdvTrainList.Location = new System.Drawing.Point(3, 94);
             this.gdvTrainList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvTrainList.Size = new System.Drawing.Size(761, 450);
+            this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
             this.gdvTrainList.TabIndex = 27;
-            this.gdvTrainList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvTrainList_CellContentClick);
-            this.gdvTrainList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gdvTrainList_DataBindingComplete_1);
-            this.gdvTrainList.SelectionChanged += new System.EventHandler(this.gdvTrainList_SelectionChanged_1);
             // 
             // TrainID
             // 
@@ -439,42 +440,11 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcome.Location = new System.Drawing.Point(62, 20);
+            this.lblWelcome.Location = new System.Drawing.Point(16, 14);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(101, 21);
             this.lblWelcome.TabIndex = 2;
             this.lblWelcome.Text = "Welcome,";
-            // 
-            // lblTk
-            // 
-            this.lblTk.AutoSize = true;
-            this.lblTk.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTk.ForeColor = System.Drawing.Color.Green;
-            this.lblTk.Location = new System.Drawing.Point(174, 614);
-            this.lblTk.Name = "lblTk";
-            this.lblTk.Size = new System.Drawing.Size(28, 21);
-            this.lblTk.TabIndex = 43;
-            this.lblTk.Text = "tk";
-            // 
-            // lblAmount
-            // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.ForeColor = System.Drawing.Color.Green;
-            this.lblAmount.Location = new System.Drawing.Point(108, 614);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(38, 21);
-            this.lblAmount.TabIndex = 42;
-            this.lblAmount.Text = "0.0";
-            // 
-            // pbProfileIcon
-            // 
-            this.pbProfileIcon.BackgroundImage = global::RailwayTicketManagementSystem.Properties.Resources.rsz_usericon1;
-            this.pbProfileIcon.Location = new System.Drawing.Point(13, 12);
-            this.pbProfileIcon.Name = "pbProfileIcon";
-            this.pbProfileIcon.Size = new System.Drawing.Size(43, 29);
-            this.pbProfileIcon.TabIndex = 44;
-            this.pbProfileIcon.TabStop = false;
             // 
             // FormEmployeDashbord
             // 
@@ -483,7 +453,7 @@
             this.ClientSize = new System.Drawing.Size(1529, 732);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormEmployeDashbord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -493,7 +463,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfileIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,6 +478,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label lblTotalOutput;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblTrainList;
         private System.Windows.Forms.DataGridView gdvCart;
@@ -530,8 +500,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Available;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Label lblTk;
-        private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.PictureBox pbProfileIcon;
     }
 }

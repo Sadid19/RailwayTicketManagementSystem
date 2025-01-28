@@ -87,6 +87,7 @@
             this.pnlFormTrainInfo.Name = "pnlFormTrainInfo";
             this.pnlFormTrainInfo.Size = new System.Drawing.Size(925, 660);
             this.pnlFormTrainInfo.TabIndex = 7;
+            //this.pnlFormTrainInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormTrainInfo_Paint);
             // 
             // lblUpdateMsg
             // 
@@ -98,6 +99,7 @@
             this.lblUpdateMsg.Size = new System.Drawing.Size(286, 32);
             this.lblUpdateMsg.TabIndex = 80;
             this.lblUpdateMsg.Text = "*To update a train write in the text box\'s and\r\nclick to the save button. \r\n";
+            //this.lblUpdateMsg.Click += new System.EventHandler(this.lblUpdateMsg_Click);
             // 
             // lblAddMsg
             // 
@@ -109,6 +111,7 @@
             this.lblAddMsg.Size = new System.Drawing.Size(287, 32);
             this.lblAddMsg.TabIndex = 79;
             this.lblAddMsg.Text = "*To add a new train fill up the text box\'s and\r\nclick to the save button. \r\n";
+            //this.lblAddMsg.Click += new System.EventHandler(this.lblAddMsg_Click);
             // 
             // txtAvailable
             // 
@@ -117,6 +120,7 @@
             this.txtAvailable.Name = "txtAvailable";
             this.txtAvailable.Size = new System.Drawing.Size(164, 27);
             this.txtAvailable.TabIndex = 75;
+            //this.txtAvailable.TextChanged += new System.EventHandler(this.txtAvailable_TextChanged);
             // 
             // lblSearchbyTrainId
             // 
@@ -159,7 +163,7 @@
             this.dgvTrainInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTrainInfo.Size = new System.Drawing.Size(901, 314);
             this.dgvTrainInfo.TabIndex = 70;
-            this.dgvTrainInfo.TabStop = false;
+            //this.dgvTrainInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainInfo_CellContentClick);
             // 
             // TrainId
             // 
@@ -254,6 +258,7 @@
             this.txtTrainId.Name = "txtTrainId";
             this.txtTrainId.Size = new System.Drawing.Size(164, 27);
             this.txtTrainId.TabIndex = 18;
+            //this.txtTrainId.TextChanged += new System.EventHandler(this.txtTrainId_TextChanged);
             // 
             // lblPrice
             // 
@@ -264,6 +269,7 @@
             this.lblPrice.Size = new System.Drawing.Size(52, 21);
             this.lblPrice.TabIndex = 17;
             this.lblPrice.Text = "Price";
+            //this.lblPrice.Click += new System.EventHandler(this.lblTotalSeat_Click);
             // 
             // lblAvailable
             // 
@@ -274,6 +280,7 @@
             this.lblAvailable.Size = new System.Drawing.Size(89, 21);
             this.lblAvailable.TabIndex = 16;
             this.lblAvailable.Text = "Available";
+            //this.lblAvailable.Click += new System.EventHandler(this.lblAvailable_Click);
             // 
             // lblTo
             // 
@@ -294,6 +301,7 @@
             this.lblFrom.Size = new System.Drawing.Size(117, 21);
             this.lblFrom.TabIndex = 14;
             this.lblFrom.Text = "From Station";
+            //this.lblFrom.Click += new System.EventHandler(this.lblFrom_Click);
             // 
             // lblTrainName
             // 
@@ -365,7 +373,7 @@
             this.Name = "FormTrainInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTrainInfo";
-            this.Load += new System.EventHandler(this.FormTrainInfo_Load);
+            //this.Load += new System.EventHandler(this.FormTrainInfo_Load);
             this.pnlFormTrainInfo.ResumeLayout(false);
             this.pnlFormTrainInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainInfo)).EndInit();

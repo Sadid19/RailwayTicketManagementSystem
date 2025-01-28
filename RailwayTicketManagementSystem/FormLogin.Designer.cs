@@ -36,10 +36,7 @@
             this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblRailwaiTicketSystem = new System.Windows.Forms.Label();
             this.pnlloginForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlloginForm
@@ -51,10 +48,11 @@
             this.pnlloginForm.Controls.Add(this.cbShowPassword);
             this.pnlloginForm.Controls.Add(this.txtUserId);
             this.pnlloginForm.Controls.Add(this.lblUserId);
-            this.pnlloginForm.Location = new System.Drawing.Point(529, 96);
+            this.pnlloginForm.Location = new System.Drawing.Point(84, 116);
             this.pnlloginForm.Name = "pnlloginForm";
             this.pnlloginForm.Size = new System.Drawing.Size(379, 321);
             this.pnlloginForm.TabIndex = 0;
+            //this.pnlloginForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnClear
             // 
@@ -127,36 +125,12 @@
             this.lblUserId.TabIndex = 0;
             this.lblUserId.Text = "User Id";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::RailwayTicketManagementSystem.Properties.Resources.rsz_2loginpic;
-            this.pictureBox1.Location = new System.Drawing.Point(55, 110);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(310, 260);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblRailwaiTicketSystem
-            // 
-            this.lblRailwaiTicketSystem.AutoSize = true;
-            this.lblRailwaiTicketSystem.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRailwaiTicketSystem.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblRailwaiTicketSystem.Location = new System.Drawing.Point(78, 486);
-            this.lblRailwaiTicketSystem.Name = "lblRailwaiTicketSystem";
-            this.lblRailwaiTicketSystem.Size = new System.Drawing.Size(342, 21);
-            this.lblRailwaiTicketSystem.TabIndex = 2;
-            this.lblRailwaiTicketSystem.Text = "Railway Ticket Management System";
-            this.lblRailwaiTicketSystem.Click += new System.EventHandler(this.lblRailwaiTicketSystem_Click);
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(983, 597);
-            this.Controls.Add(this.lblRailwaiTicketSystem);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlloginForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -164,11 +138,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
+            //this.Load += new System.EventHandler(this.FormLogin_Load);
             this.pnlloginForm.ResumeLayout(false);
             this.pnlloginForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -182,7 +155,5 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblRailwaiTicketSystem;
     }
 }

@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAdminDashboard = new System.Windows.Forms.Panel();
-            this.lblTk = new System.Windows.Forms.Label();
-            this.btnHistory = new System.Windows.Forms.Button();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddTrain = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
-            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblTotalOutput = new System.Windows.Forms.Label();
             this.lblCart = new System.Windows.Forms.Label();
             this.lblTrainList = new System.Windows.Forms.Label();
             this.gdvCart = new System.Windows.Forms.DataGridView();
@@ -62,18 +60,15 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnEmployeeList = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.pbAdminProfileIcon = new System.Windows.Forms.PictureBox();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.pnlAdminDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdminProfileIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAdminDashboard
             // 
             this.pnlAdminDashboard.BackColor = System.Drawing.Color.White;
-            this.pnlAdminDashboard.Controls.Add(this.pbAdminProfileIcon);
-            this.pnlAdminDashboard.Controls.Add(this.lblTk);
             this.pnlAdminDashboard.Controls.Add(this.btnHistory);
             this.pnlAdminDashboard.Controls.Add(this.btnUpdateDetails);
             this.pnlAdminDashboard.Controls.Add(this.btnDelete);
@@ -81,7 +76,7 @@
             this.pnlAdminDashboard.Controls.Add(this.btnCancel);
             this.pnlAdminDashboard.Controls.Add(this.btnConfirm);
             this.pnlAdminDashboard.Controls.Add(this.btnContinue);
-            this.pnlAdminDashboard.Controls.Add(this.lblAmount);
+            this.pnlAdminDashboard.Controls.Add(this.lblTotalOutput);
             this.pnlAdminDashboard.Controls.Add(this.lblCart);
             this.pnlAdminDashboard.Controls.Add(this.lblTrainList);
             this.pnlAdminDashboard.Controls.Add(this.gdvCart);
@@ -97,30 +92,7 @@
             this.pnlAdminDashboard.Name = "pnlAdminDashboard";
             this.pnlAdminDashboard.Size = new System.Drawing.Size(1540, 753);
             this.pnlAdminDashboard.TabIndex = 0;
-            // 
-            // lblTk
-            // 
-            this.lblTk.AutoSize = true;
-            this.lblTk.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTk.ForeColor = System.Drawing.Color.Green;
-            this.lblTk.Location = new System.Drawing.Point(178, 636);
-            this.lblTk.Name = "lblTk";
-            this.lblTk.Size = new System.Drawing.Size(28, 21);
-            this.lblTk.TabIndex = 28;
-            this.lblTk.Text = "tk";
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.BackColor = System.Drawing.Color.Green;
-            this.btnHistory.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHistory.Location = new System.Drawing.Point(1149, 12);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(109, 48);
-            this.btnHistory.TabIndex = 27;
-            this.btnHistory.Text = "History";
-            this.btnHistory.UseVisualStyleBackColor = false;
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            //this.pnlAdminDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdminDashboard_Paint);
             // 
             // btnUpdateDetails
             // 
@@ -200,16 +172,16 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // lblAmount
+            // lblTotalOutput
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.ForeColor = System.Drawing.Color.Green;
-            this.lblAmount.Location = new System.Drawing.Point(112, 636);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(38, 21);
-            this.lblAmount.TabIndex = 20;
-            this.lblAmount.Text = "0.0";
+            this.lblTotalOutput.AutoSize = true;
+            this.lblTotalOutput.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOutput.ForeColor = System.Drawing.Color.Green;
+            this.lblTotalOutput.Location = new System.Drawing.Point(94, 636);
+            this.lblTotalOutput.Name = "lblTotalOutput";
+            this.lblTotalOutput.Size = new System.Drawing.Size(133, 21);
+            this.lblTotalOutput.TabIndex = 20;
+            this.lblTotalOutput.Text = "Total Outptut";
             // 
             // lblCart
             // 
@@ -254,7 +226,7 @@
             this.gdvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvCart.Size = new System.Drawing.Size(730, 450);
             this.gdvCart.TabIndex = 17;
-            this.gdvCart.SelectionChanged += new System.EventHandler(this.gdvCart_SelectionChanged_1);
+            //this.gdvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvCart_CellContentClick);
             // 
             // InvoiceNumber
             // 
@@ -324,7 +296,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
-            this.lblTotal.Location = new System.Drawing.Point(48, 636);
+            this.lblTotal.Location = new System.Drawing.Point(15, 636);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(58, 21);
             this.lblTotal.TabIndex = 16;
@@ -338,7 +310,7 @@
             "2",
             "3",
             "4"});
-            this.cmbQuantity.Location = new System.Drawing.Point(140, 584);
+            this.cmbQuantity.Location = new System.Drawing.Point(107, 584);
             this.cmbQuantity.Name = "cmbQuantity";
             this.cmbQuantity.Size = new System.Drawing.Size(56, 24);
             this.cmbQuantity.TabIndex = 13;
@@ -348,7 +320,7 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.Green;
-            this.lblQuantity.Location = new System.Drawing.Point(45, 584);
+            this.lblQuantity.Location = new System.Drawing.Point(12, 584);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(89, 21);
             this.lblQuantity.TabIndex = 12;
@@ -370,13 +342,13 @@
             this.gdvTrainList.Name = "gdvTrainList";
             this.gdvTrainList.ReadOnly = true;
             this.gdvTrainList.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gdvTrainList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gdvTrainList.RowTemplate.Height = 24;
             this.gdvTrainList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvTrainList.Size = new System.Drawing.Size(771, 450);
             this.gdvTrainList.TabIndex = 11;
-            this.gdvTrainList.SelectionChanged += new System.EventHandler(this.gdvTrainList_SelectionChanged_1);
+            //this.gdvTrainList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainList_CellContentClick);
             // 
             // TrainID
             // 
@@ -463,20 +435,24 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.Green;
-            this.lblWelcome.Location = new System.Drawing.Point(59, 23);
+            this.lblWelcome.Location = new System.Drawing.Point(48, 22);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(101, 21);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome,";
             // 
-            // pbAdminProfileIcon
+            // btnHistory
             // 
-            this.pbAdminProfileIcon.Image = global::RailwayTicketManagementSystem.Properties.Resources.rsz_usericon4;
-            this.pbAdminProfileIcon.Location = new System.Drawing.Point(12, 12);
-            this.pbAdminProfileIcon.Name = "pbAdminProfileIcon";
-            this.pbAdminProfileIcon.Size = new System.Drawing.Size(41, 32);
-            this.pbAdminProfileIcon.TabIndex = 29;
-            this.pbAdminProfileIcon.TabStop = false;
+            this.btnHistory.BackColor = System.Drawing.Color.Green;
+            this.btnHistory.Font = new System.Drawing.Font("Mongolian Baiti", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Location = new System.Drawing.Point(1149, 12);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(109, 48);
+            this.btnHistory.TabIndex = 27;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // FormAdminDashboard
             // 
@@ -490,11 +466,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdminDashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAdminDashboard_FormClosed);
+           // this.Load += new System.EventHandler(this.FormAdminDashboard_Load);
             this.pnlAdminDashboard.ResumeLayout(false);
             this.pnlAdminDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTrainList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdminProfileIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -515,7 +491,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnContinue;
-        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblTotalOutput;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddTrain;
         private System.Windows.Forms.Button btnUpdateDetails;
@@ -533,7 +509,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceCart;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Label lblTk;
-        private System.Windows.Forms.PictureBox pbAdminProfileIcon;
     }
 }
