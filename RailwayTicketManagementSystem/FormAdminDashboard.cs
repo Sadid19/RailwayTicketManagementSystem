@@ -25,7 +25,7 @@ namespace RailwayTicketManagementSystem
             this.gdvTrainList.SelectionChanged += gdvTrainList_SelectionChanged_1;
             this.gdvCart.SelectionChanged += gdvCart_SelectionChanged_1;
         }
-
+        //new
         public FormAdminDashboard(string info, string userId) : this()
         {
             this.lblWelcome.Text += info.ToUpper();
