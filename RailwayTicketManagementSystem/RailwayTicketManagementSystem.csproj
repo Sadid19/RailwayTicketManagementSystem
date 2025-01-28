@@ -135,5 +135,29 @@
   <ItemGroup>
     <None Include="Resources\rsz_usericon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_usericon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_usericon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_usericon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_usericon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogInPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogInPic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_1loginpic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_2loginpic.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
